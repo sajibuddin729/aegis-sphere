@@ -20,13 +20,19 @@ node_modules/
 dist/
 .vite/
 
+# Java / Maven
+target/
+*.class
+
 # IDE
 .idea/
 .vscode/
 
-# Logs
+# Logs and evidence
 *.log
 logs/
+docs/evidence/
+evidence/
 
 # Database/runtime
 *.db
@@ -37,6 +43,10 @@ blockchain/network/
 blockchain/bin/
 blockchain/build_chain.sh
 blockchain/tools/
+blockchain/accounts/
+blockchain/get_account.sh
+apps/fisco-bridge/runtime/
+apps/api/runtime/
 ._*
 **/nodes/
 **/data/
