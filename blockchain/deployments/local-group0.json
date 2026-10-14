@@ -1,0 +1,22 @@
+{
+  "network": "local-fisco-bcos",
+  "chainId": "chain0",
+  "groupId": "group0",
+  "fiscoVersion": "3.17.1",
+  "contracts": {
+    "AegisToken": {
+      "address": "0xc8ead4b26b2c6ac14c9fd90d9684c9bc2cc40085",
+      "symbol": "ACNY",
+      "decimals": 2
+    },
+    "PoIRegistry": {
+      "address": "0xd24180cc0fef2f3e545de4f9aafc09345cd08903"
+    },
+    "RiskCircuitBreaker": {
+      "address": "0x37a44585bf1e9618fdb4c62c4c96189a07dd4b48"
+    },
+    "AgentWallet": {
+      "address": "0x31ed5233b81c79d5adddeef991f531a9bbc2ad01"
+    }
+  }
+}
