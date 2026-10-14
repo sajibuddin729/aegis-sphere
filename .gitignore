@@ -34,6 +34,10 @@ logs/
 
 # Blockchain private/runtime data
 blockchain/network/
+blockchain/bin/
+blockchain/build_chain.sh
+blockchain/tools/
+._*
 **/nodes/
 **/data/
 **/keystore/

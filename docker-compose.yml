@@ -1,0 +1,22 @@
+services:
+  fisco-dev:
+    build:
+      context: .
+      dockerfile: blockchain/docker/Dockerfile
+    platform: linux/amd64
+    container_name: aegis-fisco-dev
+    working_dir: /workspace
+    volumes:
+      - ./blockchain:/workspace/blockchain
+    ports:
+      - "20200:20200"
+      - "20201:20201"
+      - "20202:20202"
+      - "20203:20203"
+      - "30300:30300"
+      - "30301:30301"
+      - "30302:30302"
+      - "30303:30303"
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
