@@ -1,0 +1,23 @@
+{
+  "candidate_id": "candidate_a5ddca29c6e84f75ab9d74a0385befd6",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "This will ensure that all mandatory controls are explicitly implemented without ambiguity, thereby improving the system's ability to detect and block intent replay variations effectively.",
+    "problem": "The mitigation strategies are overly broad and lack specificity, which may lead to ambiguity in enforcement and potential bypass of security controls.",
+    "proposed_change": "Refine mitigation strategies to include explicit, actionable steps for each control. For example, specify exact audit procedures, define clear compliance gates with measurable thresholds, and outline precise replay protection mechanisms with technical implementation details.",
+    "risks": [],
+    "target_component": "mitigation_strategies",
+    "title": "Enhance Specificity of Mitigation Strategies",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Validate that all mitigation strategies are now specific and actionable.",
+      "Ensure that the system can enforce the refined controls without ambiguity."
+    ]
+  },
+  "proposal_hash": "0xed12dd621a790125971b3a4ad23a2f541249a4364e6a4088925e60789f22448d",
+  "source_match_id": "match_697d4710c8ca474381aef77cd9535536",
+  "status": "FROZEN"
+}

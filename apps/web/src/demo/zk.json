@@ -1,0 +1,24 @@
+{
+  "system": "Groth16",
+  "curve": "BN254 (bn128)",
+  "circuit_constraints": 1321,
+  "circuit_file": "zk/circuits/aegis_eligibility.circom",
+  "proof_tx_hash": "0xf6d54704d5bbcaac6769af3526626353849a31736244ab2f4213e162b651ed80",
+  "block_number": 96,
+  "proof_hash": "0xd1fefaeb6cb88370f6a0e98ec2bc670ddad87a66b4aa8d4d67153b390fde3fd5",
+  "contracts": {
+    "verifier": "0x0966598496a26e837bbd75b0dd877a3612e02962",
+    "gate": "0x717570d925f97a1bc4a852b61fe89b46a1294b2b"
+  },
+  "snapshot_registration": {
+    "tx_hash": "0x64dd1f6b9014a190808cfe05e5b19403547d4f7ae145d93b15ab398c4a70a6bb",
+    "block_number": 89,
+    "balance_commitment": "990669799167244024345307099514662909580105867749857670559869861684577727954",
+    "risk_commitment": "7902950032458748359910523918888673027426392038623861743384793165171412443414"
+  },
+  "public_signals": {
+    "amount_minor": 1000,
+    "max_risk_bps": 1500
+  },
+  "privacy_guarantee": "Private balance and private risk score are proven via Poseidon commitments without disclosing exact numerical values on-chain."
+}

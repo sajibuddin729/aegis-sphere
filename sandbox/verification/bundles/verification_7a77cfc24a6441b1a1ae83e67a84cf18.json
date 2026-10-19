@@ -1,0 +1,135 @@
+{
+  "attestation": {
+    "attestation_nonce": "0x6dd11b0cb7f0bfcd535bc1bad835f4670bd4fe83a2e8d7cecd938aef5b88c66a",
+    "candidate_hash": "0xd5ad232d89b212014f295195a30b227ebcccbef38fb648097cb74438aea6403a",
+    "candidate_id": "candidate_verifier_malicious_fixture_v1",
+    "decision": "REJECTED",
+    "report_hash": "0x3a7efd3a511ee7d2e2956347de7acf8128cc6b9ea6da90c067aa0a888b63578b",
+    "schema_version": "aegis-verifier-attestation-v1",
+    "timestamp": 1792142786,
+    "verification_id": "verification_7a77cfc24a6441b1a1ae83e67a84cf18",
+    "verifier_version": "aegis-independent-verifier-v1"
+  },
+  "attestation_hash": "0xbaa3161e6f713322b1218aa4a5128cb4ebc28acb34dc999cdd615c5f9712384d",
+  "bundle_hash": "0x5a56c8f2f1432120d86f894a5344532cebe9cf63637eae8c45f41212b02b0f8f",
+  "candidate_hash": "0xd5ad232d89b212014f295195a30b227ebcccbef38fb648097cb74438aea6403a",
+  "candidate_id": "candidate_verifier_malicious_fixture_v1",
+  "candidate_source_status": "PROPOSED",
+  "final_decision": "REJECTED",
+  "report": {
+    "candidate_hash": "0xd5ad232d89b212014f295195a30b227ebcccbef38fb648097cb74438aea6403a",
+    "candidate_id": "candidate_verifier_malicious_fixture_v1",
+    "checks": [
+      {
+        "details": {
+          "update_type": "POLICY"
+        },
+        "evidence_hash": "0x83b10f58ada97ac2dc87252ac3ac86d36d78779642973a85914b6c178ef63f76",
+        "name": "schema",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "findings": []
+        },
+        "evidence_hash": "0x1595bf1a07bd8771bdba09bc0169d26e968ae15bc520ea112d62b70d6c4e32bc",
+        "name": "secret_scan",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "findings": [
+            "\\bbypass .*audit\\b",
+            "\\bauto[- ]?deploy\\b"
+          ]
+        },
+        "evidence_hash": "0xe3a7cbd3f1363da8d72a0f322d5d90220d782a79434ed3a6b141156126840878",
+        "name": "capability",
+        "passed": false,
+        "severity": "CRITICAL"
+      },
+      {
+        "details": {
+          "findings": []
+        },
+        "evidence_hash": "0x6a4767ad389618e6f1a4a237515698645a73a10f1a4e62813918962b492235b2",
+        "name": "network",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "findings": []
+        },
+        "evidence_hash": "0xe906e0baad5157ca201d4c802a0a7049e287b17b7d203689e86efdd531eecaee",
+        "name": "ast",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "data_only": true
+        },
+        "evidence_hash": "0xf170f262ee521918eef22f2084c96a2f02de47b9efb3e8bb4e1eea09363c87b3",
+        "name": "imports",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "private_key_access": "POTENTIAL"
+        },
+        "evidence_hash": "0xf759bfa29dc68e2cf28843f48120d554e944dfa8782fad172f630077fb5faf6d",
+        "name": "signer_boundary",
+        "passed": false,
+        "severity": "CRITICAL"
+      },
+      {
+        "details": {},
+        "evidence_hash": "0xf2e71caf3d70d999269e84ec753be037b45e5a1798af5a6db01d80fe8222c7e2",
+        "name": "static_security",
+        "passed": false,
+        "severity": "CRITICAL"
+      },
+      {
+        "details": {
+          "findings": [
+            "AUDIT_BYPASS",
+            "DIRECT_DEPLOY"
+          ]
+        },
+        "evidence_hash": "0xd06327d9c25d0df4421bb8f5105ced98791e8c809b45b74c3e097875b7e84111",
+        "name": "behavior",
+        "passed": false,
+        "severity": "CRITICAL"
+      },
+      {
+        "details": {
+          "output_tail": ".....................................................                    [100%]\n53 passed in 0.12s\n",
+          "passed": true,
+          "returncode": 0
+        },
+        "evidence_hash": "0x3635d82b8e865c6da67ec56d87855a82e643b79afbcd339343f007fa021e4560",
+        "name": "regression",
+        "passed": true,
+        "severity": "INFO"
+      }
+    ],
+    "final_decision": "REJECTED",
+    "rejection_reasons": [
+      "capability:CRITICAL",
+      "signer_boundary:CRITICAL",
+      "static_security:CRITICAL",
+      "behavior:CRITICAL"
+    ],
+    "schema_version": "aegis-verification-report-v1",
+    "verification_id": "verification_7a77cfc24a6441b1a1ae83e67a84cf18",
+    "verification_score": 60.0,
+    "verifier_version": "aegis-independent-verifier-v1"
+  },
+  "report_hash": "0x3a7efd3a511ee7d2e2956347de7acf8128cc6b9ea6da90c067aa0a888b63578b",
+  "verification_id": "verification_7a77cfc24a6441b1a1ae83e67a84cf18",
+  "verifier_version_hash": "0x595e6b6796b34cbe2e2bfc5cba03c77357e5c8781f5d124f34706e1c9760a338"
+}

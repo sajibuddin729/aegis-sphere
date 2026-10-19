@@ -3,17 +3,31 @@ import json
 from typing import Any
 
 
-def canonical_json_bytes(
-    value: dict[str, Any],
+def canonical_bytes(
+    value: dict,
 ) -> bytes:
-    serialized = json.dumps(
+    def reject_float(item):
+        if isinstance(item, float):
+            raise ValueError(
+                "FLOAT_NOT_ALLOWED_IN_CANONICAL_DATA"
+            )
+        if isinstance(item, dict):
+            for v in item.values():
+                reject_float(v)
+        elif isinstance(item, list):
+            for v in item:
+                reject_float(v)
+
+    reject_float(value)
+    return json.dumps(
         value,
+        ensure_ascii=False,
         sort_keys=True,
         separators=(",", ":"),
-        ensure_ascii=False,
-    )
+    ).encode("utf-8")
 
-    return serialized.encode("utf-8")
+
+canonical_json_bytes = canonical_bytes
 
 
 def sha256_hex(
@@ -33,6 +47,17 @@ def sha256_text(
 def canonical_hash(
     value: dict[str, Any],
 ) -> str:
-    return sha256_hex(
-        canonical_json_bytes(value)
+    return "0x" + hashlib.sha256(canonical_bytes(value)).hexdigest()
+
+
+def user_request_hash(
+    raw_instruction: str,
+) -> str:
+    return (
+        "0x"
+        + hashlib.sha256(
+            raw_instruction.encode(
+                "utf-8"
+            )
+        ).hexdigest()
     )

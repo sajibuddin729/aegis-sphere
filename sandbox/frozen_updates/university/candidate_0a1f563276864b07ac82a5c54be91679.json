@@ -1,0 +1,24 @@
+{
+  "candidate_id": "candidate_0a1f563276864b07ac82a5c54be91679",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "This improvement will enhance the system's ability to detect and respond to liquidity risks in real-time, improving the robustness of market-risk defenses without compromising the existing audit and compliance controls.",
+    "problem": "The defense response lacks explicit real-time liquidity monitoring during the attack, which may leave gaps in detecting low liquidity conditions as they evolve.",
+    "proposed_change": "Integrate real-time liquidity monitoring mechanisms that dynamically adjust based on market conditions and scenario parameters. This should include continuous tracking of liquidity metrics and immediate alerts when thresholds are breached, ensuring timely detection and response to liquidity risks.",
+    "risks": [],
+    "target_component": "market-risk",
+    "title": "Enhance Real-Time Liquidity Monitoring Integration",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Test real-time liquidity monitoring under extreme market stress conditions",
+      "Validate integration of liquidity monitoring with audit and compliance controls",
+      "Ensure no performance degradation from additional monitoring overhead"
+    ]
+  },
+  "proposal_hash": "0x8d5192e9c1e93013ef31843e18f31c3b607ceb385d4a655e0a88772fd14dbffb",
+  "source_match_id": "match_cb0fccd7b0bc495ea954ea5eee0b00d9",
+  "status": "FROZEN"
+}

@@ -36,6 +36,7 @@ class AegisWalletProvider:
         intent_id: str,
         policy_hash: str,
         risk_score_bps: int,
+        expiry: int | None = None,
     ) -> dict[str, Any]:
 
         return await self.bridge.transfer(
@@ -45,4 +46,5 @@ class AegisWalletProvider:
             intent_id=intent_id,
             policy_hash=policy_hash,
             risk_score_bps=risk_score_bps,
+            expiry=expiry,
         )

@@ -1,0 +1,23 @@
+{
+  "candidate_id": "candidate_b1cc1bdbdcd6447792191988ca2927dd",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "This will reduce the risk of adversarial exploitation by ensuring that emergency stops are only triggered in legitimate scenarios, thereby preserving system integrity and preventing unnecessary disruptions.",
+    "problem": "The system's existing emergency stop mechanisms may not effectively distinguish between legitimate and adversarial triggers, creating a potential vulnerability.",
+    "proposed_change": "Implement a mechanism to differentiate between legitimate and adversarial emergency stop triggers, ensuring that only authorized and contextually valid emergency stops are executed.",
+    "risks": [],
+    "target_component": "PBFT safety mitigation",
+    "title": "Clarify Emergency Stop Differentiation",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Validate emergency stop differentiation logic under adversarial conditions",
+      "Test system behavior when both legitimate and adversarial emergency stops are simulated"
+    ]
+  },
+  "proposal_hash": "0xe64a199a5e6cedd5f9bf32663ef59e9da8860a7a8c9d9655e213a234314401a2",
+  "source_match_id": "match_36f462686bc0457cb8f2cc671c7b0919",
+  "status": "FROZEN"
+}

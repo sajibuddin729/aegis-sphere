@@ -1,0 +1,9 @@
+{
+  "candidate_hash": "0xa0bcdfa6c44fa5fdf3309c23d646cf298ccd875270387eadd65fe9c65beba615",
+  "candidate_id": "candidate_verifier_safe_fixture_v1",
+  "governance_block": 75,
+  "governance_decision": "APPROVED",
+  "governance_tx_hash": "0x30555a7e544f344742ab189eb3732b424d49a1cd3741182213cc96e4832d54cd",
+  "production_deployment_authorized": false,
+  "staging_authorized": true
+}

@@ -1,0 +1,21 @@
+{
+  "decision": "EXECUTE",
+  "reason": "ON_CHAIN_SUCCESS",
+  "action": "TRANSFER",
+  "transaction_hash": "0xf49511589fc47a8fe208fc9ce34895b32b4cfbd074ecea92f5c95cd5b1311cdf",
+  "block_number": 100,
+  "poi_hash": "0xf1ba21bdac22b01b86defdff8281608affe5acfd827bba66fd56ef00427ddd2b",
+  "intent_id": "0x6e90a3ca0e364d491558410c7435cce2f954e1c77a5ced16a23f1a2aa82aac2e",
+  "policy_hash": "0xc7a89fd05228298a42a48f113e168f044e919fabdf240178db3c49a628cfdf38",
+  "risk_score_bps": 453,
+  "security_status": "SAFE",
+  "compliance_status": "PASS",
+  "market_summary": "The market snapshot for ACNY shows a stable regime with a slight positive trend of 0.08% over 24 hours. The sentiment score of 0.18 indicates a mildly positive outlook. High liquidity score of 88.",
+  "reasoning_summary": "The transaction meets all risk, security, and compliance controls. Supplier B is an approved recipient with a LOW risk level. Transfer amount of 2.00 ACNY is within acceptable parameters.",
+  "compliance_evidence_hash": "0xf590d65dc8d10a797ae09c70af0abe1b3349725d1ed1b5bb8e71fabe5ce91224",
+  "audit_transaction_hash": "0x28c6e84f0ae4bd6df5c76af5ea1aac9a3f7d697bc829c4795c19408cf934fca9",
+  "audit_block_number": 99,
+  "recipient": "0x1000000000000000000000000000000000000002",
+  "amount_minor": 200,
+  "raw_instruction": "Transfer 2.00 ACNY to Supplier B only if the transaction is permitted by all current risk, security and compliance controls."
+}

@@ -1,0 +1,27 @@
+{
+  "version": "aegis-security-invariants-v1",
+  "invariants": [
+    "AI cannot access financial private keys",
+    "Deterministic risk controls cannot be bypassed",
+    "Pre-execution audit anchoring cannot be bypassed",
+    "Deterministic compliance remains final compliance authority",
+    "AI cannot authorize its own update",
+    "Financial signer cannot govern updates",
+    "Governance verifier cannot move financial assets",
+    "Governance approval authorizes staging only",
+    "Learning and execution environments remain isolated",
+    "Ordinary valid wallet transactions remain autonomous without human approval"
+  ],
+  "invariant_ids": {
+    "INV-01": "AI cannot access financial private keys",
+    "INV-02": "Deterministic risk controls cannot be bypassed",
+    "INV-03": "Pre-execution audit anchoring cannot be bypassed",
+    "INV-04": "Deterministic compliance remains final compliance authority",
+    "INV-05": "AI cannot authorize its own update",
+    "INV-06": "Financial signer cannot govern updates",
+    "INV-07": "Governance verifier cannot move financial assets",
+    "INV-08": "Governance approval authorizes staging only",
+    "INV-09": "Learning and execution environments remain isolated",
+    "INV-10": "Ordinary valid wallet transactions remain autonomous without human approval"
+  }
+}

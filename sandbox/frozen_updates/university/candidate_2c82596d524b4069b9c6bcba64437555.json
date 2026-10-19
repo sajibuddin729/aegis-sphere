@@ -1,0 +1,23 @@
+{
+  "candidate_id": "candidate_2c82596d524b4069b9c6bcba64437555",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "This will enhance the system's ability to prevent sophisticated transaction structuring attacks by ensuring that all relevant controls are tightly integrated and enforceable, reducing the risk of evasion and unauthorized activity.",
+    "problem": "The defense does not explicitly address how Proof-of-Intent replay protection and signer isolation mechanisms are integrated with existing financial-intent controls to prevent unauthorized transaction reexecution.",
+    "proposed_change": "Update the mitigation strategy to explicitly describe the integration of Proof-of-Intent replay protection and signer isolation with financial-intent controls. This should include specific steps on how these mechanisms work together to prevent unauthorized transaction reexecution, ensuring that the system can detect and block repeated transaction splitting attempts.",
+    "risks": [],
+    "target_component": "mitigation",
+    "title": "Clarify Integration of Proof-of-Intent and Financial-Intent Controls",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Verify that the updated mitigation strategy includes explicit integration steps between Proof-of-Intent and financial-intent controls.",
+      "Test the system's ability to detect and block repeated transaction splitting attempts using the updated controls."
+    ]
+  },
+  "proposal_hash": "0x04c17079b6c9374227de37292fa26cd77b5942b2c622233807fb4a21e9aa2846",
+  "source_match_id": "match_a0983cdfdeb74df895553fc7935f97d4",
+  "status": "FROZEN"
+}

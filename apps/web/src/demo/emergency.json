@@ -1,0 +1,29 @@
+{
+  "state": "NORMAL",
+  "reason": "ALL_VALIDATORS_HEALTHY",
+  "healthy_nodes": 4,
+  "unhealthy_nodes": 0,
+  "min_block": 106,
+  "max_block": 106,
+  "signing_state": "ENABLED",
+  "fault_model": {
+    "total_nodes": 4,
+    "max_byzantine_tolerated": 1,
+    "formula": "n >= 3f + 1"
+  },
+  "states_specification": [
+    { "nodes_healthy": "4 / 4", "state": "NORMAL", "financial_signing": "ENABLED" },
+    { "nodes_healthy": "3 / 4", "state": "DEGRADED", "financial_signing": "ENABLED" },
+    { "nodes_healthy": "<= 2 / 4", "state": "EMERGENCY_STOP", "financial_signing": "DISABLED (Fail-Closed)" }
+  ],
+  "validators": [
+    { "id": 0, "rpc_port": 20200, "status": "HEALTHY", "block": 106, "peers": 4 },
+    { "id": 1, "rpc_port": 20201, "status": "HEALTHY", "block": 106, "peers": 4 },
+    { "id": 2, "rpc_port": 20202, "status": "HEALTHY", "block": 106, "peers": 4 },
+    { "id": 3, "rpc_port": 20203, "status": "HEALTHY", "block": 106, "peers": 4 }
+  ],
+  "kill_switch": {
+    "software": "IMPLEMENTED (Enforced at isolated Java :9080 signing boundary)",
+    "physical_isolation": "FUTURE HARDWARE EXTENSION (Heartbeat relay & power isolation controller)"
+  }
+}

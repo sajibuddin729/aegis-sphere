@@ -1,0 +1,23 @@
+{
+  "candidate_id": "candidate_757219ce4ae348d9818ebd28a6d390c4",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "This will strengthen the confidence in the decision to escalate by ensuring that all required signals are not only detected but also verified and resolved.",
+    "problem": "The defense correctly identifies the need for escalation but fails to provide evidence that the required signals (independent verification and governance) have been fulfilled.",
+    "proposed_change": "Implement a strategy to explicitly verify the presence and resolution of required signals (independent verification and governance) before making any escalation decisions. This includes cross-referencing evidence references with the required signals to ensure completeness and correctness.",
+    "risks": [],
+    "target_component": "DEFENSE_SIGNAL_VERIFICATION",
+    "title": "Ensure Verification of Required Signals in Defense",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Check if all required signals are explicitly verified in the defense output.",
+      "Ensure that evidence references are mapped to the required signals for completeness."
+    ]
+  },
+  "proposal_hash": "0xbaa89d5e415e4295175cc0ca63c9035420c2caffbdd04fef72a352d5a7af5e75",
+  "source_match_id": "match_36c98a3fd7a347dd99ef5c5bc7c33cf4",
+  "status": "FROZEN"
+}

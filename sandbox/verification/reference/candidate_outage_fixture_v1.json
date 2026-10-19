@@ -1,0 +1,27 @@
+{
+  "candidate_id": "candidate_outage_fixture_v1",
+  "deployment_authorized": false,
+  "frozen_reason": null,
+  "policy_result": "PROPOSED",
+  "proposal": {
+    "confidence": 0.9,
+    "expected_benefit": "Improved explanation consistency for replay protection without changing transaction authority.",
+    "problem": "The security agent should consistently explain that duplicate Proof-of-Intent submissions must be rejected.",
+    "proposed_change": "Add explicit guidance to identify duplicate Proof-of-Intent reuse and recommend rejection while preserving all existing risk, audit, signer, and compliance controls.",
+    "risks": [
+      "Potential false-positive replay classification"
+    ],
+    "target_component": "security-agent",
+    "title": "Clarify duplicate Proof-of-Intent detection",
+    "update_type": "PROMPT",
+    "verification_tests": [
+      "Duplicate PoI replay must be rejected",
+      "Fresh unique PoI must remain valid"
+    ],
+    "candidate_id": "candidate_outage_fixture_v1",
+    "justification": "Test bridge outage fail closed"
+  },
+  "proposal_hash": "0x6803009ed08b9d376672486425164cd6086dfe52b0d735d0c0f1f8ec82cd470b",
+  "source_match_id": null,
+  "status": "PROPOSED"
+}

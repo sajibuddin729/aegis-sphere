@@ -1,0 +1,38 @@
+{
+  "policyVersion": "aegis-verifier-policy-v1",
+
+  "requiredChecks": [
+    "schema",
+    "secret_scan",
+    "ast",
+    "imports",
+    "capability",
+    "network",
+    "signer_boundary",
+    "static_security",
+    "regression",
+    "behavior",
+    "security_invariants"
+  ],
+
+  "minimumVerificationScore": 100,
+
+  "criticalFailureRejects": true,
+
+  "prohibitedCapabilities": [
+    "financial_signing",
+    "private_key_access",
+    "bridge_secret_access",
+    "direct_wallet_execution",
+    "direct_portfolio_execution",
+    "unrestricted_network",
+    "self_authorization",
+    "governance_bypass",
+    "audit_bypass",
+    "risk_bypass"
+  ],
+
+  "deploymentPolicy": "STAGING_ONLY_AFTER_GOVERNANCE",
+
+  "productionAutoDeployment": false
+}

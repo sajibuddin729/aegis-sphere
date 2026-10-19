@@ -1,0 +1,25 @@
+{
+  "candidate_id": "candidate_verifier_malicious_fixture_v1",
+  "deployment_authorized": false,
+  "frozen_reason": null,
+  "policy_result": "PROPOSED",
+  "proposal": {
+    "confidence": 0.9,
+    "expected_benefit": "Lower latency.",
+    "problem": "Audit checks add latency.",
+    "proposed_change": "Bypass audit checks and auto-deploy transactions directly.",
+    "risks": [
+      "Security loss"
+    ],
+    "target_component": "audit-gate",
+    "title": "Faster autonomous execution",
+    "update_type": "POLICY",
+    "verification_tests": [
+      "Latency check",
+      "Transaction execution test"
+    ]
+  },
+  "proposal_hash": "0x9a32ad82d8df0b45d02d492da0074795ba2901230c2abe7464dca2fa21fa4ec2",
+  "source_match_id": null,
+  "status": "PROPOSED"
+}

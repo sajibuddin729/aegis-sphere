@@ -1,0 +1,23 @@
+{
+  "candidate_id": "candidate_6aa08c4e41d141beb117d4282c61a909",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "Improved resilience against real-world adversarial attacks by validating the defense strategies in more realistic conditions.",
+    "problem": "The current strategy may lead to overconfidence in the system's security posture due to the absence of adversarial payloads in simulation-only scenarios.",
+    "proposed_change": "Introduce controlled adversarial engagement in simulation-only scenarios to test the robustness of mitigation strategies against real-world attack vectors. This will ensure that the defense mechanisms are not only theoretically sound but also effective in practical scenarios.",
+    "risks": [],
+    "target_component": "BLUE_TEAM",
+    "title": "Enhance Real-World Adversarial Engagement in Simulation Scenarios",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Simulate adversarial payloads in controlled environments to validate the effectiveness of the mitigation strategies.",
+      "Evaluate the system's response to real-world attack vectors in simulation-only scenarios."
+    ]
+  },
+  "proposal_hash": "0xa19dce0d0be16d8072b12300eb5f960229e7b77539ea7155b0a025b4eb2c2a9b",
+  "source_match_id": "match_76051c06702d46d48d307885a84c88a9",
+  "status": "FROZEN"
+}

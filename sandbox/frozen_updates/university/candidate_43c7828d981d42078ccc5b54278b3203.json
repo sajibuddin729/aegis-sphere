@@ -1,0 +1,24 @@
+{
+  "candidate_id": "candidate_43c7828d981d42078ccc5b54278b3203",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "This enhancement will improve the system's responsiveness to dynamic market stress scenarios, ensuring that it can adapt to changing conditions and maintain robust risk management protocols.",
+    "problem": "The system's current strategy lacks explicit real-time monitoring of liquidity and volatility during attack simulations, which may leave gaps in adapting to dynamic market stress scenarios.",
+    "proposed_change": "Implement real-time monitoring of liquidity and volatility as part of the market risk control strategy. This includes continuous tracking of liquidity levels and volatility metrics, with dynamic thresholds that adjust based on market conditions. This will improve the system's ability to adapt to dynamic market stress scenarios and ensure timely detection and response to extreme market events.",
+    "risks": [],
+    "target_component": "market-risk",
+    "title": "Enhance Real-Time Monitoring of Liquidity and Volatility",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Test real-time liquidity and volatility monitoring under simulated market stress scenarios",
+      "Validate dynamic threshold adjustments based on market conditions",
+      "Ensure integration with existing risk management protocols"
+    ]
+  },
+  "proposal_hash": "0xa0700d092be7472a3611958d8a14f8225e2888375cd4fa8adfb6176c3068a83b",
+  "source_match_id": "match_23724093bec64f70aed4ecd2af13fa92",
+  "status": "FROZEN"
+}

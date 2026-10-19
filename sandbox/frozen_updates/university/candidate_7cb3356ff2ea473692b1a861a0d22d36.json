@@ -1,0 +1,23 @@
+{
+  "candidate_id": "candidate_7cb3356ff2ea473692b1a861a0d22d36",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "This change will ensure that the defense aligns with the expected decision and maintains the legitimacy of the market portfolio adjustment by focusing on the critical risk and reserve signals.",
+    "problem": "The defense's decision to 'BLOCK' is inconsistent with the scenario's expected decision of 'ALLOW' due to the absence of critical signals 'risk_within_limit' and 'reserve_preserved'.",
+    "proposed_change": "Update the strategy to prioritize the detection and validation of 'risk_within_limit' and 'reserve_preserved' signals over audit and compliance signals in scenarios involving market portfolio adjustments. This ensures that the defense aligns with the expected decision and maintains the legitimacy of the market portfolio adjustment.",
+    "risks": [],
+    "target_component": "BLUE_CRITIC",
+    "title": "Prioritize Risk and Reserve Signals in Decision-Making",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Verify that the defense correctly identifies and prioritizes 'risk_within_limit' and 'reserve_preserved' signals in market portfolio adjustment scenarios.",
+      "Ensure that the decision-making process aligns with the expected decision of 'ALLOW' when these signals are detected."
+    ]
+  },
+  "proposal_hash": "0x3cb47ec104d77dcc647091bd52bfe0a5b81012193b6924a8ad6308d32f00d024",
+  "source_match_id": "match_ccccc1207ce6466191de86a0380ed27f",
+  "status": "FROZEN"
+}

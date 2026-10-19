@@ -1,0 +1,24 @@
+{
+  "candidate_id": "candidate_e08d1c79f1f445e49644821f395a2c6a",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "This will help identify potential gaps in the defense strategy and ensure that the mitigations are effective in diverse and unpredictable environments.",
+    "problem": "The defense strategy is robust in a simulated environment but may not be fully prepared for real-world adversarial scenarios due to the lack of real-world testing.",
+    "proposed_change": "Integrate real-world adversarial testing into the training curriculum to expose the defense mechanisms to evolving attack vectors and real-world conditions.",
+    "risks": [],
+    "target_component": "BLUE_TEAM",
+    "title": "Enhance Real-World Simulation Testing",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Real-world adversarial scenario simulations",
+      "Performance under evolving attack vectors",
+      "Compliance with real-world regulatory requirements"
+    ]
+  },
+  "proposal_hash": "0x67d4725d11eb5538933aff705e6db6f19f5f45fd6cf1e299f2dd54e059397b4c",
+  "source_match_id": "match_fc1c9038748a46d0aebbc17a4ea05116",
+  "status": "FROZEN"
+}

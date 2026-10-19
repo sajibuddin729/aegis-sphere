@@ -1,0 +1,23 @@
+{
+  "candidate_id": "candidate_bab1eee7ed954f0da30f9852d9905778",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "This change will strengthen the confidence in the decision-making process by ensuring that all required signals are not only identified but also verified, thereby closing the gap in the verification process and improving the robustness of the defense strategy.",
+    "problem": "The defense correctly identifies the need for 'independent_verification' and 'governance_required' signals but fails to provide evidence that these signals were actually verified or fulfilled.",
+    "proposed_change": "Update the defense strategy to explicitly verify and confirm the fulfillment of required signals such as 'independent_verification' and 'governance_required' before making a decision. This includes adding a step to the reasoning process that checks for the presence and validity of these signals in the evidence provided.",
+    "risks": [],
+    "target_component": "DEFENSE_REASONING",
+    "title": "Ensure Verification of Required Signals in Defense Reasoning",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Check if the defense reasoning includes a step to verify the presence of required signals.",
+      "Ensure that the defense provides evidence confirming the fulfillment of 'independent_verification' and 'governance_required' signals."
+    ]
+  },
+  "proposal_hash": "0xeadbfb8c74e0a584f96814a762e58cafb8f70b83dec03044d03ccbbb0e8ccea5",
+  "source_match_id": "match_ae5e66f936454d4fb074c3fbe6bf1f28",
+  "status": "FROZEN"
+}

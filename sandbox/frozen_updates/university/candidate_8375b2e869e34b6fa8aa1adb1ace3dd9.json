@@ -1,0 +1,24 @@
+{
+  "candidate_id": "candidate_8375b2e869e34b6fa8aa1adb1ace3dd9",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "This will prevent potential exploitation of audit integrity gaps and ensure that the defense is robust against real-world adversarial scenarios.",
+    "problem": "The defense response relies on simulation-only attack scenarios and high confidence in detection, which may lead to overreliance on current controls without real-world validation.",
+    "proposed_change": "Implement a strategy to ensure that all audit integrity mitigations are tested in real-world environments, including live simulations and controlled penetration testing, to identify and address potential exploitation of audit integrity gaps.",
+    "risks": [],
+    "target_component": "DEFENSE_MITIGATIONS",
+    "title": "Enhance Real-World Testing of Audit Integrity Controls",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Real-world audit integrity penetration testing",
+      "Live simulation of adversarial scenarios",
+      "Post-implementation audit integrity validation checks"
+    ]
+  },
+  "proposal_hash": "0xb414e8ce5821facbe78e43b9a61d6ac00be5d97829cfb084159ca675619b86fc",
+  "source_match_id": "match_b04ff93737cc42b488bb275bea55f259",
+  "status": "FROZEN"
+}

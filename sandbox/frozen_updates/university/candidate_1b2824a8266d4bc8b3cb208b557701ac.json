@@ -1,0 +1,24 @@
+{
+  "candidate_id": "candidate_1b2824a8266d4bc8b3cb208b557701ac",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 1.0,
+    "expected_benefit": "This change will strengthen the system's ability to prevent replay attacks by ensuring that each POI is uniquely tied to a specific transaction context, thereby reducing the risk of unauthorized reexecution of transactions.",
+    "problem": "The current replay protection mechanisms are not granular enough to uniquely tie the Proof-of-Intent (POI) to the transaction context, allowing potential reuse across different transactions.",
+    "proposed_change": "Implement a context-specific binding of the Proof-of-Intent (POI) to the transaction, ensuring that each POI is uniquely tied to a specific transaction context. This can be achieved by incorporating transaction-specific metadata (e.g., timestamp, transaction ID, or unique identifier) into the POI generation and verification process. This will prevent the reuse of a POI across different transactions and enhance the system's ability to detect and block replay attacks.",
+    "risks": [],
+    "target_component": "replay_protection",
+    "title": "Enhance Replay Protection Granularity",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Test replay attack with reused POI across different transactions",
+      "Verify that POI is uniquely tied to transaction context",
+      "Ensure that audit and compliance gates are enforced with the updated replay protection mechanism"
+    ]
+  },
+  "proposal_hash": "0x90aeaccb04f2327516f6be31b9bfb1bcc40a4101e99e3f848115a9960606e814",
+  "source_match_id": "match_f9eca54f1e9841b2ac30ef45757476d4",
+  "status": "FROZEN"
+}

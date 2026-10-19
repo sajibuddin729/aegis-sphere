@@ -1,0 +1,24 @@
+{
+  "candidate_id": "candidate_84052715001042448427bf7245fc3d67",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "Improved signal alignment will ensure that the defense's detected signals match the scenario's required signals, leading to more accurate decision-making and better alignment with the scenario's constraints.",
+    "problem": "The defense detected signals 'independent_verification_required' and 'governance_required' but the scenario explicitly requires 'independent_verification' and 'governance_required' signals. There is a mismatch in signal naming and alignment.",
+    "proposed_change": "Update the signal detection and interpretation logic to ensure that 'independent_verification_required' and 'governance_required' are mapped to the required signals 'independent_verification' and 'governance_required' respectively. This will ensure alignment with the scenario's constraints and prevent ambiguity in signal interpretation.",
+    "risks": [],
+    "target_component": "signal_alignment",
+    "title": "Improve Signal Alignment for Governance and Verification Requirements",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Verify that the signal detection logic correctly maps 'independent_verification_required' to 'independent_verification'.",
+      "Verify that the signal detection logic correctly maps 'governance_required' to 'governance_required'.",
+      "Test the scenario with updated signal alignment to ensure that the defense's decision-making is consistent with the required signals."
+    ]
+  },
+  "proposal_hash": "0x6714d4fdb39f62fac49155481f232043c8519d6b8fb5994639ae068db2f3dc9a",
+  "source_match_id": "match_5a56c6a52f7146e1a0ce6b07ab46791c",
+  "status": "FROZEN"
+}

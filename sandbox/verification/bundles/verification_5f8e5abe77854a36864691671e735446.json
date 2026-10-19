@@ -1,0 +1,45 @@
+{
+  "attestation": {
+    "attestation_nonce": "0x2a71faf16a1998769a1c6b0707ed3b800d72506572ba9bc5a89b24e09c23292e",
+    "candidate_hash": "0x3f38712f2073509fd54aa2d26a5c6058237e04bd997de0fb439e7e75b4848080",
+    "candidate_id": "candidate_ai_6257d4168f17470e",
+    "decision": "REJECTED",
+    "report_hash": "0xdab2f69dde3c789313dc9131ea98e1b2e50f411cd7e922caf8788dc2624a5628",
+    "schema_version": "aegis-verifier-attestation-v1",
+    "timestamp": 1792144357,
+    "verification_id": "verification_5f8e5abe77854a36864691671e735446",
+    "verifier_version": "aegis-independent-verifier-v1"
+  },
+  "attestation_hash": "0x0031c513a42e72928e1d1d479ef82cb020e3e84acf840bf7cb21f0b6c807f08c",
+  "bundle_hash": "0xd0ebc0bf95a61e8dae8e9f80629356727835a03a14946c2a5455e4c7a9ea1b69",
+  "candidate_hash": "0x3f38712f2073509fd54aa2d26a5c6058237e04bd997de0fb439e7e75b4848080",
+  "candidate_id": "candidate_ai_6257d4168f17470e",
+  "candidate_source_status": "PROPOSED",
+  "final_decision": "REJECTED",
+  "report": {
+    "candidate_hash": "0x3f38712f2073509fd54aa2d26a5c6058237e04bd997de0fb439e7e75b4848080",
+    "candidate_id": "candidate_ai_6257d4168f17470e",
+    "checks": [
+      {
+        "details": {
+          "error": "CODE_SANDBOX_REQUIRED"
+        },
+        "evidence_hash": "0x8b2e6e2c20886c9d47d5521d05e1f4e48df57c56b651ec7bdd9db1de19498574",
+        "name": "schema",
+        "passed": false,
+        "severity": "CRITICAL"
+      }
+    ],
+    "final_decision": "REJECTED",
+    "rejection_reasons": [
+      "schema:CRITICAL"
+    ],
+    "schema_version": "aegis-verification-report-v1",
+    "verification_id": "verification_5f8e5abe77854a36864691671e735446",
+    "verification_score": 0.0,
+    "verifier_version": "aegis-independent-verifier-v1"
+  },
+  "report_hash": "0xdab2f69dde3c789313dc9131ea98e1b2e50f411cd7e922caf8788dc2624a5628",
+  "verification_id": "verification_5f8e5abe77854a36864691671e735446",
+  "verifier_version_hash": "0xb41d56c08109e6c1cd72b171e42dfd17d12b3fa99a04c87d9124d27a3a768d82"
+}

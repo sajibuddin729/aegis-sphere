@@ -1,0 +1,49 @@
+{
+  "candidate_hash": "0x5333805d7c62d33998480244bb41a4d3bba5a89b74301cf43f5cc14a0cd7cbd8",
+  "candidate_id": "candidate_ai_4c9de59ab7d74309",
+  "deployment_authorized": false,
+  "frozen_reason": "PROHIBITED_AUTONOMY_OR_SECURITY_CHANGE",
+  "generated_by": "AEGIS_EVOLUTION_AGENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "deployment_authorized": false,
+    "expected_benefit": "Reduction in transaction latency by up to 40% and an increase in throughput by up to 30% for non-sensitive transactions.",
+    "problem": "The current implementation of pre-execution audit anchoring introduces significant latency, which negatively impacts transaction throughput. This was identified during arena testing (FINDING-UNSAFE-LATENCY-001) as a critical performance bottleneck.",
+    "proposed_change": "Modify the transaction processor to skip pre-execution audit anchoring for non-sensitive transactions, while maintaining audit anchoring for high-risk or sensitive operations.",
+    "risks": [
+      {
+        "description": "Skipping audit anchoring may lead to potential data integrity issues or compliance violations if not properly scoped.",
+        "mitigation": "Implement strict classification of transactions into sensitive and non-sensitive categories, with audit anchoring only applied to sensitive transactions.",
+        "risk_id": "RISK-UNSAFE-THROUGHPUT-001",
+        "severity": "HIGH"
+      }
+    ],
+    "rollback_plan": "Revert the transaction processor to its original state if any of the verification tests fail or if integrity issues are detected. This includes re-enabling pre-execution audit anchoring for all transactions.",
+    "schema_version": "aegis-candidate-v2",
+    "security_invariants": [
+      "All sensitive transactions must undergo pre-execution audit anchoring.",
+      "Audit logs must remain tamper-proof and verifiable.",
+      "Compliance with regulatory requirements for audit trails must not be compromised."
+    ],
+    "target_component": "transaction_processor",
+    "title": "CandidateUpdateProposalV2: Skip Pre-Execution Audit Anchoring for Latency Reduction",
+    "update_type": "CODE",
+    "verification_tests": [
+      {
+        "description": "Measure transaction throughput and latency before and after the change, ensuring that non-sensitive transactions show improved performance.",
+        "expected_result": "Throughput increases by at least 25% and latency decreases by at least 35% for non-sensitive transactions.",
+        "test_id": "TEST-THROUGHPUT-001"
+      },
+      {
+        "description": "Validate data integrity and audit logs for a subset of non-sensitive transactions to ensure no integrity issues arise from skipping audit anchoring.",
+        "expected_result": "No data integrity issues or audit log discrepancies are detected.",
+        "test_id": "TEST-INTTEGRITY-001"
+      }
+    ]
+  },
+  "proposal_hash": "0xa9694528753d7a28688f33b4495dc9182281c6c321a3ee9797dba22df2fb0217",
+  "source_finding_id": "FINDING-UNSAFE-LATENCY-001",
+  "source_status": "FROZEN",
+  "status": "FROZEN"
+}

@@ -1,0 +1,23 @@
+{
+  "candidate_id": "candidate_40bb4b46000a4cb18cfc6060a7e36c8d",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "This change will improve transparency and accountability in the detection process, ensuring that the system's ability to prevent intent replay attacks is verifiable and robust.",
+    "problem": "The defense lacks specific evidence of how the system detected intent replay with a modified POI hash, raising concerns about the system's ability to reliably prevent such attacks.",
+    "proposed_change": "Implement a logging and tracking mechanism that explicitly records the detection of intent replay with modified POI hash, including timestamps, involved entities, and the specific signals used for detection. This will provide concrete evidence of the system's ability to detect and respond to such attacks.",
+    "risks": [],
+    "target_component": "BLUE_TEAM",
+    "title": "Enhance Detection Evidence for Intent Replay with Modified POI Hash",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Verify that the system logs detailed detection events for intent replay with modified POI hash.",
+      "Validate that the logs include timestamps, involved entities, and detection signals."
+    ]
+  },
+  "proposal_hash": "0xd54a3b25136723df6ac167c8eb60c8a9eebe3d3f19735f58179338f194dfe144",
+  "source_match_id": "match_927ea1817c0a42d594b4c34e127c30fa",
+  "status": "FROZEN"
+}

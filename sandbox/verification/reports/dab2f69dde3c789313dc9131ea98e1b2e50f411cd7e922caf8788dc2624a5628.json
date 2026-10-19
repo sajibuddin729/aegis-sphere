@@ -1,0 +1,23 @@
+{
+  "candidate_hash": "0x3f38712f2073509fd54aa2d26a5c6058237e04bd997de0fb439e7e75b4848080",
+  "candidate_id": "candidate_ai_6257d4168f17470e",
+  "checks": [
+    {
+      "details": {
+        "error": "CODE_SANDBOX_REQUIRED"
+      },
+      "evidence_hash": "0x8b2e6e2c20886c9d47d5521d05e1f4e48df57c56b651ec7bdd9db1de19498574",
+      "name": "schema",
+      "passed": false,
+      "severity": "CRITICAL"
+    }
+  ],
+  "final_decision": "REJECTED",
+  "rejection_reasons": [
+    "schema:CRITICAL"
+  ],
+  "schema_version": "aegis-verification-report-v1",
+  "verification_id": "verification_5f8e5abe77854a36864691671e735446",
+  "verification_score": 0.0,
+  "verifier_version": "aegis-independent-verifier-v1"
+}

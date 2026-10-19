@@ -91,19 +91,92 @@ class FiscoBridgeClient:
         intent_id: str,
         policy_hash: str,
         risk_score_bps: int,
+        expiry: int | None = None,
     ) -> dict[str, Any]:
+
+        payload: dict[str, Any] = {
+            "recipient": recipient,
+            "amountMinor": str(amount_minor),
+            "poiHash": poi_hash,
+            "intentId": intent_id,
+            "policyHash": policy_hash,
+            "riskScoreBps": str(risk_score_bps),
+        }
+        if expiry is not None:
+            payload["expiry"] = expiry
 
         return await self._request(
             "POST",
             "/wallet/transfer",
+            json=payload,
+        )
+
+    async def portfolio_state(
+        self,
+    ) -> dict[str, Any]:
+        return await self._request(
+            "GET",
+            "/portfolio/state",
+        )
+
+    async def portfolio_rebalance(
+        self,
+        *,
+        direction: str,
+        amount_in_minor: int,
+        min_amount_out_minor: int,
+        poi_hash: str,
+        intent_id: str,
+        policy_hash: str,
+        risk_score_bps: int,
+        expiry: int | None = None,
+    ) -> dict[str, Any]:
+        payload: dict[str, Any] = {
+            "direction": direction,
+            "amountInMinor": str(amount_in_minor),
+            "minAmountOutMinor": str(min_amount_out_minor),
+            "poiHash": poi_hash,
+            "intentId": intent_id,
+            "policyHash": policy_hash,
+            "riskScoreBps": str(risk_score_bps),
+        }
+        if expiry is not None:
+            payload["expiry"] = expiry
+
+        return await self._request(
+            "POST",
+            "/portfolio/rebalance",
+            json=payload,
+        )
+
+    async def audit_record(
+        self,
+        *,
+        evidence_hash: str,
+        policy_version_hash: str,
+        retrieval_set_hash: str,
+        decision_hash: str,
+        related_poi_hash: str,
+    ) -> dict[str, Any]:
+        return await self._request(
+            "POST",
+            "/audit/evidence",
             json={
-                "recipient": recipient,
-                "amountMinor": str(amount_minor),
-                "poiHash": poi_hash,
-                "intentId": intent_id,
-                "policyHash": policy_hash,
-                "riskScoreBps": str(risk_score_bps),
+                "evidenceHash": evidence_hash,
+                "policyVersionHash": policy_version_hash,
+                "retrievalSetHash": retrieval_set_hash,
+                "decisionHash": decision_hash,
+                "relatedPoIHash": related_poi_hash,
             },
+        )
+
+    async def audit_evidence(
+        self,
+        evidence_hash: str,
+    ) -> dict[str, Any]:
+        return await self._request(
+            "GET",
+            f"/audit/evidence/{evidence_hash}",
         )
 
     async def _request(

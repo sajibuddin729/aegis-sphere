@@ -1,0 +1,23 @@
+{
+  "candidate_id": "candidate_a26f95b280d041e8ac3196c9383e74b7",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "This change will strengthen the confidence in the decision to escalate by ensuring that the required signals are not only identified but also verified, aligning with the scenario's explicit requirements.",
+    "problem": "The defense correctly identifies the need for 'independent_verification' and 'governance_required' signals but fails to provide evidence that these signals were actually verified or fulfilled.",
+    "proposed_change": "Update the defense strategy to explicitly confirm the fulfillment of required signals such as 'independent_verification' and 'governance_required' by referencing specific evidence or audit trails that demonstrate their verification.",
+    "risks": [],
+    "target_component": "DEFENSE_REASONING",
+    "title": "Ensure Verification Signals Are Explicitly Confirmed",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Check if the defense provides explicit evidence of signal verification in future scenarios.",
+      "Validate that the proposed change does not introduce any new constraints or ambiguities in the defense reasoning."
+    ]
+  },
+  "proposal_hash": "0xd9edc80c9a459b700f8d4da1fbb8f817fd9605c0f8554dcf03d20dae0c8682f2",
+  "source_match_id": "match_94894f01cdae43759b83ab8125f584b4",
+  "status": "FROZEN"
+}

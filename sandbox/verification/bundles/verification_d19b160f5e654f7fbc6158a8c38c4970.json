@@ -1,0 +1,139 @@
+{
+  "attestation": {
+    "attestation_nonce": "0xeebf406798f9af2c2a1b5f8834138842bf8e96c021e4df3d6a59597c5c5f605c",
+    "candidate_hash": "0x75b74c5718b12d8d5ae460ce682c4deae7f8a653804bd54c8418e0feeeb54bd9",
+    "candidate_id": "candidate_ai_d67d577349424f2e",
+    "decision": "REJECTED",
+    "report_hash": "0x70291ac3cbc483958b615f0a9f4af22f028b06c7d34e548877d13a4b61fd253b",
+    "schema_version": "aegis-verifier-attestation-v1",
+    "timestamp": 1792144469,
+    "verification_id": "verification_d19b160f5e654f7fbc6158a8c38c4970",
+    "verifier_version": "aegis-independent-verifier-v1"
+  },
+  "attestation_hash": "0x877a0db8635b093a2ef9622777a5fb6b9f91573bcf5c01b823a00957e3257d57",
+  "bundle_hash": "0x00340abce65b772c03ad5ad1d6048978c592c7b726cf7912d450174edc1dc42d",
+  "candidate_hash": "0x75b74c5718b12d8d5ae460ce682c4deae7f8a653804bd54c8418e0feeeb54bd9",
+  "candidate_id": "candidate_ai_d67d577349424f2e",
+  "candidate_source_status": "PROPOSED",
+  "final_decision": "REJECTED",
+  "report": {
+    "candidate_hash": "0x75b74c5718b12d8d5ae460ce682c4deae7f8a653804bd54c8418e0feeeb54bd9",
+    "candidate_id": "candidate_ai_d67d577349424f2e",
+    "checks": [
+      {
+        "details": {
+          "update_type": "POLICY"
+        },
+        "evidence_hash": "0x83b10f58ada97ac2dc87252ac3ac86d36d78779642973a85914b6c178ef63f76",
+        "name": "schema",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "findings": []
+        },
+        "evidence_hash": "0x1595bf1a07bd8771bdba09bc0169d26e968ae15bc520ea112d62b70d6c4e32bc",
+        "name": "secret_scan",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "findings": []
+        },
+        "evidence_hash": "0x4cc516edaeab95e890243b04ec855e2c53454fa0f12523b8c3008f98d610a83d",
+        "name": "capability",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "findings": []
+        },
+        "evidence_hash": "0x6a4767ad389618e6f1a4a237515698645a73a10f1a4e62813918962b492235b2",
+        "name": "network",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "findings": []
+        },
+        "evidence_hash": "0xe906e0baad5157ca201d4c802a0a7049e287b17b7d203689e86efdd531eecaee",
+        "name": "ast",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "data_only": true
+        },
+        "evidence_hash": "0xf170f262ee521918eef22f2084c96a2f02de47b9efb3e8bb4e1eea09363c87b3",
+        "name": "imports",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "private_key_access": false
+        },
+        "evidence_hash": "0x6c7dc212933af968382145070f1b7ca6ab39435b8e0a63896c1f6a2b9d73a136",
+        "name": "signer_boundary",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {},
+        "evidence_hash": "0xfebf6c8aa831c48cd853e1dc6df69369c2c0e4148797a492a2308d820548cc78",
+        "name": "static_security",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "findings": []
+        },
+        "evidence_hash": "0x7a20e0b982f9bd53b96af6efb561830cde160bc81d3b03cf21097c9c2a752d61",
+        "name": "behavior",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "output_tail": ".............................................................            [100%]\n61 passed in 0.22s\n",
+          "passed": true,
+          "returncode": 0
+        },
+        "evidence_hash": "0x0ccf16ba84f449d939c151920aadaf826de601b903ab415ced90f4c32c7def69",
+        "name": "regression",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "findings": [
+            "UNRECOGNIZED_INVARIANT:INV-01: IntentIds must be globally unique across all on-chain transactions.",
+            "UNRECOGNIZED_INVARIANT:INV-02: Intent validation must reject any intent with a previously used intentId, regardless of PoI hash.",
+            "UNRECOGNIZED_INVARIANT:INV-03: The system must ensure that intentIds are not reused in any form of replay attack."
+          ]
+        },
+        "evidence_hash": "0x29ca7ab508f2f42e0241ebe5f24c707e927169d4b5ddc599bc1878754cb9ce31",
+        "name": "security_invariants",
+        "passed": false,
+        "severity": "CRITICAL"
+      }
+    ],
+    "final_decision": "REJECTED",
+    "rejection_reasons": [
+      "security_invariants:CRITICAL"
+    ],
+    "schema_version": "aegis-verification-report-v1",
+    "verification_id": "verification_d19b160f5e654f7fbc6158a8c38c4970",
+    "verification_score": 90.91,
+    "verifier_version": "aegis-independent-verifier-v1"
+  },
+  "report_hash": "0x70291ac3cbc483958b615f0a9f4af22f028b06c7d34e548877d13a4b61fd253b",
+  "verification_id": "verification_d19b160f5e654f7fbc6158a8c38c4970",
+  "verifier_version_hash": "0xb41d56c08109e6c1cd72b171e42dfd17d12b3fa99a04c87d9124d27a3a768d82"
+}

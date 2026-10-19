@@ -2,6 +2,7 @@ package com.aegis.bridge;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.math.BigInteger;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -19,6 +20,18 @@ public final class BridgeConfig {
     public final String riskAddress;
     public final String agentWalletAddress;
 
+    public final String growthAssetAddress;
+    public final String swapPoolAddress;
+    public final String portfolioRiskAddress;
+    public final String portfolioManagerAddress;
+    public final BigInteger portfolioPriceBInA;
+    public final String auditEvidenceRegistryAddress;
+
+    public final String oracleUrl;
+    public final String oracleKey;
+    public final boolean oracleRequired;
+    public final String intentLedgerPath;
+
     private BridgeConfig(
         String fiscoConfigPath,
         String accountPemPath,
@@ -29,7 +42,17 @@ public final class BridgeConfig {
         String tokenAddress,
         String poiRegistryAddress,
         String riskAddress,
-        String agentWalletAddress
+        String agentWalletAddress,
+        String growthAssetAddress,
+        String swapPoolAddress,
+        String portfolioRiskAddress,
+        String portfolioManagerAddress,
+        BigInteger portfolioPriceBInA,
+        String auditEvidenceRegistryAddress,
+        String oracleUrl,
+        String oracleKey,
+        boolean oracleRequired,
+        String intentLedgerPath
     ) {
         this.fiscoConfigPath = fiscoConfigPath;
         this.accountPemPath = accountPemPath;
@@ -41,6 +64,16 @@ public final class BridgeConfig {
         this.poiRegistryAddress = poiRegistryAddress;
         this.riskAddress = riskAddress;
         this.agentWalletAddress = agentWalletAddress;
+        this.growthAssetAddress = growthAssetAddress;
+        this.swapPoolAddress = swapPoolAddress;
+        this.portfolioRiskAddress = portfolioRiskAddress;
+        this.portfolioManagerAddress = portfolioManagerAddress;
+        this.portfolioPriceBInA = portfolioPriceBInA;
+        this.auditEvidenceRegistryAddress = auditEvidenceRegistryAddress;
+        this.oracleUrl = oracleUrl;
+        this.oracleKey = oracleKey;
+        this.oracleRequired = oracleRequired;
+        this.intentLedgerPath = intentLedgerPath;
     }
 
     public static BridgeConfig load() throws Exception {
@@ -85,10 +118,66 @@ public final class BridgeConfig {
             .path("address")
             .asText();
 
+        String auditEvidenceRegistryAddress = contracts
+            .path("AuditEvidenceRegistry")
+            .path("address")
+            .asText();
+
         validateAddress("AegisToken", tokenAddress);
         validateAddress("PoIRegistry", poiAddress);
         validateAddress("RiskCircuitBreaker", riskAddress);
         validateAddress("AgentWallet", walletAddress);
+        validateAddress("AuditEvidenceRegistry", auditEvidenceRegistryAddress);
+
+        JsonNode portfolio = root.path("portfolio");
+
+        String growthAssetAddress = portfolio
+            .path("growthAsset")
+            .path("address")
+            .asText();
+
+        String swapPoolAddress = portfolio
+            .path("swapPool")
+            .path("address")
+            .asText();
+
+        String portfolioRiskAddress = portfolio
+            .path("riskGuard")
+            .path("address")
+            .asText();
+
+        String portfolioManagerAddress = portfolio
+            .path("manager")
+            .path("address")
+            .asText();
+
+        BigInteger portfolioPriceBInA = new BigInteger(
+            portfolio
+                .path("swapPool")
+                .path("priceBInA")
+                .asText()
+        );
+
+        validateAddress("AegisGrowthIndex", growthAssetAddress);
+        validateAddress("AegisSwapPool", swapPoolAddress);
+        validateAddress("PortfolioRiskGuard", portfolioRiskAddress);
+        validateAddress("PortfolioManager", portfolioManagerAddress);
+
+        if (portfolioPriceBInA.compareTo(BigInteger.ZERO) <= 0) {
+            throw new IllegalStateException("Invalid portfolio priceBInA");
+        }
+
+        String oracleUrl = System.getenv().getOrDefault(
+            "AEGIS_ORACLE_URL", "http://127.0.0.1:8091"
+        );
+        String oracleKey = System.getenv().getOrDefault("AEGIS_ORACLE_KEY", "");
+        boolean oracleRequired = Boolean.parseBoolean(
+            System.getenv().getOrDefault("AEGIS_ORACLE_REQUIRED", "false")
+        );
+        String intentLedgerPath = System.getenv().getOrDefault(
+            "AEGIS_INTENT_LEDGER_PATH",
+            "apps/fisco-bridge/runtime/replay/executed-intents.log"
+        );
 
         return new BridgeConfig(
             fiscoConfig,
@@ -100,7 +189,17 @@ public final class BridgeConfig {
             tokenAddress,
             poiAddress,
             riskAddress,
-            walletAddress
+            walletAddress,
+            growthAssetAddress,
+            swapPoolAddress,
+            portfolioRiskAddress,
+            portfolioManagerAddress,
+            portfolioPriceBInA,
+            auditEvidenceRegistryAddress,
+            oracleUrl,
+            oracleKey,
+            oracleRequired,
+            intentLedgerPath
         );
     }
 

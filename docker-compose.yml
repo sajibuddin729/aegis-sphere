@@ -18,5 +18,25 @@ services:
       - "30302:30302"
       - "30303:30303"
     stdin_open: true
-    tty: true
     restart: unless-stopped
+
+  aegis-memory:
+    image: pgvector/pgvector:0.8.7-pg16
+    container_name: aegis-memory
+    env_file:
+      - ./sandbox/shared_memory/runtime/memory.env
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - aegis-memory-data:/var/lib/postgresql/data
+      - ./sandbox/shared_memory/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U aegis -d aegis_memory" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+volumes:
+  aegis-memory-data:
+

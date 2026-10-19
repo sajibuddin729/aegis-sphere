@@ -1,0 +1,48 @@
+{
+  "candidate_hash": "0x538102455a3dc8468e1ba3ada7fae13dc7569c38dc28ce0d749115ff0c462bdc",
+  "candidate_id": "candidate_ai_d142523017a8427f",
+  "deployment_authorized": false,
+  "frozen_reason": "INSUFFICIENT_SECURITY_INVARIANTS",
+  "generated_by": "AEGIS_EVOLUTION_AGENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "deployment_authorized": false,
+    "expected_benefit": "This change will prevent replay attacks by ensuring that intentIds are uniquely consumed and cannot be reused, even with different PoI hashes.",
+    "problem": "The system currently rejects duplicate PoI hashes but does not enforce on-chain rejection of reused intentIds with different PoI hashes, creating a potential replay attack vector.",
+    "proposed_change": "Implement a policy that enforces on-chain rejection of any intentId that has been previously used, regardless of the PoI hash, to prevent intentId reuse attacks.",
+    "risks": [
+      {
+        "description": "Introducing a new policy may inadvertently block legitimate intentId reuse scenarios that are valid under the current system.",
+        "mitigation": "Implement a rollback plan and conduct a controlled test phase before full deployment.",
+        "risk_id": "RISK-INTENT-REPLAY-001",
+        "severity": "MEDIUM"
+      }
+    ],
+    "rollback_plan": "If the policy causes unintended behavior or conflicts with existing contracts, revert to the previous intent validation logic and re-evaluate the policy with additional constraints or exceptions.",
+    "schema_version": "aegis-candidate-v2",
+    "security_invariants": [
+      "All intentIds must be unique and cannot be reused across any transaction.",
+      "The system must maintain immutability of contract behavior and not bypass any existing audit or compliance controls."
+    ],
+    "target_component": "intent validation logic",
+    "title": "IntentId Reuse Detection Policy Enhancement",
+    "update_type": "POLICY",
+    "verification_tests": [
+      {
+        "description": "Simulate a replay attack by reusing an intentId with a different PoI hash and verify that the system correctly rejects it.",
+        "expected_result": "The system must reject the intentId reuse attempt with a clear error message.",
+        "test_id": "TEST-INTENT-REPLAY-001"
+      },
+      {
+        "description": "Verify that the system allows the same intentId to be used only once, even if the PoI hash changes.",
+        "expected_result": "The system must enforce intentId uniqueness across all transactions.",
+        "test_id": "TEST-INTENT-REPLAY-002"
+      }
+    ]
+  },
+  "proposal_hash": "0xbfef20394fd5b661a56cdaf31cb86ae7bc2fbb825045c1e3cda7fb363c08eebd",
+  "source_finding_id": "FINDING-INTENT-REPLAY-001",
+  "source_status": "FROZEN",
+  "status": "FROZEN"
+}

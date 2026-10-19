@@ -1,0 +1,111 @@
+{
+  "candidate_hash": "0x75b74c5718b12d8d5ae460ce682c4deae7f8a653804bd54c8418e0feeeb54bd9",
+  "candidate_id": "candidate_ai_d67d577349424f2e",
+  "checks": [
+    {
+      "details": {
+        "update_type": "POLICY"
+      },
+      "evidence_hash": "0x83b10f58ada97ac2dc87252ac3ac86d36d78779642973a85914b6c178ef63f76",
+      "name": "schema",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "details": {
+        "findings": []
+      },
+      "evidence_hash": "0x1595bf1a07bd8771bdba09bc0169d26e968ae15bc520ea112d62b70d6c4e32bc",
+      "name": "secret_scan",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "details": {
+        "findings": []
+      },
+      "evidence_hash": "0x4cc516edaeab95e890243b04ec855e2c53454fa0f12523b8c3008f98d610a83d",
+      "name": "capability",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "details": {
+        "findings": []
+      },
+      "evidence_hash": "0x6a4767ad389618e6f1a4a237515698645a73a10f1a4e62813918962b492235b2",
+      "name": "network",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "details": {
+        "findings": []
+      },
+      "evidence_hash": "0xe906e0baad5157ca201d4c802a0a7049e287b17b7d203689e86efdd531eecaee",
+      "name": "ast",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "details": {
+        "data_only": true
+      },
+      "evidence_hash": "0xf170f262ee521918eef22f2084c96a2f02de47b9efb3e8bb4e1eea09363c87b3",
+      "name": "imports",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "details": {
+        "private_key_access": false
+      },
+      "evidence_hash": "0x6c7dc212933af968382145070f1b7ca6ab39435b8e0a63896c1f6a2b9d73a136",
+      "name": "signer_boundary",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "details": {},
+      "evidence_hash": "0xfebf6c8aa831c48cd853e1dc6df69369c2c0e4148797a492a2308d820548cc78",
+      "name": "static_security",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "details": {
+        "findings": []
+      },
+      "evidence_hash": "0x7a20e0b982f9bd53b96af6efb561830cde160bc81d3b03cf21097c9c2a752d61",
+      "name": "behavior",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "details": {
+        "output_tail": ".............................................................            [100%]\n61 passed in 0.59s\n",
+        "passed": true,
+        "returncode": 0
+      },
+      "evidence_hash": "0x144f013049555701eba88a795d806c205f96464889d53137e4df10aa7f5c5dcd",
+      "name": "regression",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "details": {
+        "findings": []
+      },
+      "evidence_hash": "0x39f534a5daf111b89de06704dad680952ee9302f40f84752b58c3364afdbde6f",
+      "name": "security_invariants",
+      "passed": true,
+      "severity": "INFO"
+    }
+  ],
+  "final_decision": "VERIFIED",
+  "rejection_reasons": [],
+  "schema_version": "aegis-verification-report-v1",
+  "verification_id": "verification_c89d63fb2c3345929ccdd48cbce9a653",
+  "verification_score": 100.0,
+  "verifier_version": "aegis-independent-verifier-v1"
+}

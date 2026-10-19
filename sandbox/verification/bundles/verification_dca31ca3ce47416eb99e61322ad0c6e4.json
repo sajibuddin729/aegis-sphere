@@ -1,0 +1,45 @@
+{
+  "attestation": {
+    "attestation_nonce": "0xdea27ecc03f2744d7f8fff425637cdeab6345c681cc1a4664126d2df05ef511b",
+    "candidate_hash": "0x2f663b51595ae1c5cd4b4a9454d414742b1494f54479f0dcbac4dff2c732d5a8",
+    "candidate_id": "candidate_84052715001042448427bf7245fc3d67",
+    "decision": "REJECTED",
+    "report_hash": "0x663a8f0c5185ed146b1ac0323cad8e504c466366721116195c439efb9814363a",
+    "schema_version": "aegis-verifier-attestation-v1",
+    "timestamp": 1792142913,
+    "verification_id": "verification_dca31ca3ce47416eb99e61322ad0c6e4",
+    "verifier_version": "aegis-independent-verifier-v1"
+  },
+  "attestation_hash": "0xd11a6a065aec7da87ec900a9cabc9f4678a92c9e05666b120f44a49c671e7d5a",
+  "bundle_hash": "0x034c16b1a45810330677fcf5eb17fc7dffc87527c545860ea67c43ed07f7159d",
+  "candidate_hash": "0x2f663b51595ae1c5cd4b4a9454d414742b1494f54479f0dcbac4dff2c732d5a8",
+  "candidate_id": "candidate_84052715001042448427bf7245fc3d67",
+  "candidate_source_status": "FROZEN",
+  "final_decision": "REJECTED",
+  "report": {
+    "candidate_hash": "0x2f663b51595ae1c5cd4b4a9454d414742b1494f54479f0dcbac4dff2c732d5a8",
+    "candidate_id": "candidate_84052715001042448427bf7245fc3d67",
+    "checks": [
+      {
+        "details": {
+          "error": "RISK_ASSESSMENT_REQUIRED"
+        },
+        "evidence_hash": "0x035622b534c2a85be59a295d221e80339e06a53efbb8238621dd613ac10bd79b",
+        "name": "schema",
+        "passed": false,
+        "severity": "CRITICAL"
+      }
+    ],
+    "final_decision": "REJECTED",
+    "rejection_reasons": [
+      "schema:CRITICAL"
+    ],
+    "schema_version": "aegis-verification-report-v1",
+    "verification_id": "verification_dca31ca3ce47416eb99e61322ad0c6e4",
+    "verification_score": 0.0,
+    "verifier_version": "aegis-independent-verifier-v1"
+  },
+  "report_hash": "0x663a8f0c5185ed146b1ac0323cad8e504c466366721116195c439efb9814363a",
+  "verification_id": "verification_dca31ca3ce47416eb99e61322ad0c6e4",
+  "verifier_version_hash": "0x595e6b6796b34cbe2e2bfc5cba03c77357e5c8781f5d124f34706e1c9760a338"
+}

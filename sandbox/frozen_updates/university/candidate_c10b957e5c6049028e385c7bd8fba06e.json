@@ -1,0 +1,23 @@
+{
+  "candidate_id": "candidate_c10b957e5c6049028e385c7bd8fba06e",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "This will ensure that the system remains robust against potential adversarial scenarios where the 'poi_exists' flag may be manipulated or misinterpreted, while preserving the correct decision in this specific scenario.",
+    "problem": "The scenario correctly identifies 'fresh_poi' and 'unique_intent' signals and allows the transaction, aligning with the expected decision. However, the inconsistency between 'poi_exists' being false and the presence of 'fresh_poi' as a detected signal may lead to incorrect assumptions about transaction legitimacy.",
+    "proposed_change": "Preserve the successful behavior of allowing the transaction based on 'fresh_poi' and 'unique_intent' signals. However, enhance the strategy to explicitly address the ambiguity in the 'poi_exists' flag by adding a clarification step in the mitigation strategy to ensure that the system accounts for potential contradictions between 'poi_exists' and other signals.",
+    "risks": [],
+    "target_component": "BLUE_TEAM",
+    "title": "Preservation of Successful Behavior in 'Fresh Proof-of-Intent' Scenario",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Validate that the system correctly allows the transaction when 'fresh_poi' and 'unique_intent' are present, even if 'poi_exists' is false.",
+      "Ensure that the system addresses the ambiguity in the 'poi_exists' flag through additional clarification steps in the mitigation strategy."
+    ]
+  },
+  "proposal_hash": "0x3b26344046077d5157dcb3b3d762f1ff787127d277245a23368596129d79e20f",
+  "source_match_id": "match_bd5d0e3e08b344e19e915e23ffedfdcc",
+  "status": "FROZEN"
+}

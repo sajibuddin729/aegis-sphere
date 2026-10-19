@@ -1,0 +1,24 @@
+{
+  "candidate_id": "candidate_e0865e073c654051919389694026e05d",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "This change will reduce operational overhead, improve real-time response capabilities, and ensure that the system can effectively mitigate risks without unnecessary complexity.",
+    "problem": "The current mitigation strategies are overly complex and may introduce operational overhead without directly addressing the core risk factors in real-time scenarios.",
+    "proposed_change": "Introduce a streamlined mitigation strategy that focuses on immediate, actionable steps for handling synthetic market shocks. This should include dynamic threshold adjustments, clear protocols for handling false positives, and simplified audit and compliance procedures that align with real-time risk mitigation needs.",
+    "risks": [],
+    "target_component": "mitigation_strategy",
+    "title": "Simplify Mitigation Strategies for Real-Time Risk Mitigation",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Evaluate the effectiveness of simplified mitigation strategies in synthetic market shock scenarios",
+      "Assess the impact on operational overhead and real-time response times",
+      "Verify that dynamic threshold adjustments and false positive handling are implemented correctly"
+    ]
+  },
+  "proposal_hash": "0xae45cea153cf24d395ab8dd5ffb991d1e1bd374321fa35612930315bcedcf4ac",
+  "source_match_id": "match_95675e805bfe4dffb4ba8104ed554638",
+  "status": "FROZEN"
+}

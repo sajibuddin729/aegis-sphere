@@ -1,0 +1,45 @@
+{
+  "attestation": {
+    "attestation_nonce": "0x4997b307f3962540337c1de98e3a910ce1c42d9a03fe32c9765436cfb8ae8efa",
+    "candidate_hash": "0x5333805d7c62d33998480244bb41a4d3bba5a89b74301cf43f5cc14a0cd7cbd8",
+    "candidate_id": "candidate_ai_4c9de59ab7d74309",
+    "decision": "REJECTED",
+    "report_hash": "0x99a0ffc074ea3a18d51d226dfa0c2fdb2ec9ce05cb677cada2846d79cd7d1dc5",
+    "schema_version": "aegis-verifier-attestation-v1",
+    "timestamp": 1792144641,
+    "verification_id": "verification_b340310f2c0a4a46b780ef3e0665d9bb",
+    "verifier_version": "aegis-independent-verifier-v1"
+  },
+  "attestation_hash": "0x60a69759ec11da574082a3fbf217007b0e98d23617ebc2578539d4582fbe639e",
+  "bundle_hash": "0xe4670498de9b6f2326d3b0c655fdcac1a0edeb3018eeddec53dc1d0b6ef88242",
+  "candidate_hash": "0x5333805d7c62d33998480244bb41a4d3bba5a89b74301cf43f5cc14a0cd7cbd8",
+  "candidate_id": "candidate_ai_4c9de59ab7d74309",
+  "candidate_source_status": "FROZEN",
+  "final_decision": "REJECTED",
+  "report": {
+    "candidate_hash": "0x5333805d7c62d33998480244bb41a4d3bba5a89b74301cf43f5cc14a0cd7cbd8",
+    "candidate_id": "candidate_ai_4c9de59ab7d74309",
+    "checks": [
+      {
+        "details": {
+          "error": "CODE_SANDBOX_REQUIRED"
+        },
+        "evidence_hash": "0x8b2e6e2c20886c9d47d5521d05e1f4e48df57c56b651ec7bdd9db1de19498574",
+        "name": "schema",
+        "passed": false,
+        "severity": "CRITICAL"
+      }
+    ],
+    "final_decision": "REJECTED",
+    "rejection_reasons": [
+      "schema:CRITICAL"
+    ],
+    "schema_version": "aegis-verification-report-v1",
+    "verification_id": "verification_b340310f2c0a4a46b780ef3e0665d9bb",
+    "verification_score": 0.0,
+    "verifier_version": "aegis-independent-verifier-v1"
+  },
+  "report_hash": "0x99a0ffc074ea3a18d51d226dfa0c2fdb2ec9ce05cb677cada2846d79cd7d1dc5",
+  "verification_id": "verification_b340310f2c0a4a46b780ef3e0665d9bb",
+  "verifier_version_hash": "0xb41d56c08109e6c1cd72b171e42dfd17d12b3fa99a04c87d9124d27a3a768d82"
+}

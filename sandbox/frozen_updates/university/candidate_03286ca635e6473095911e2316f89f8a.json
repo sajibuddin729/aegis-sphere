@@ -1,0 +1,23 @@
+{
+  "candidate_id": "candidate_03286ca635e6473095911e2316f89f8a",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "Improved resilience against adaptive market stress scenarios by enabling the system to dynamically adjust its risk controls in response to real-time market conditions, thereby preventing unauthorized execution and maintaining reserve integrity.",
+    "problem": "The system's reliance on audit-before-execution and compliance gates may not be sufficient to prevent unauthorized execution under extreme market stress.",
+    "proposed_change": "Introduce dynamic risk thresholds that adjust in real-time based on market conditions, ensuring that the system can adapt to evolving threats without compromising security. This would allow the system to maintain robust defenses while remaining responsive to market fluctuations.",
+    "risks": [],
+    "target_component": "mitigation_framework",
+    "title": "Enhance Resilience Against Adaptive Market Stress",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Simulate adaptive market stress scenarios with varying volatility and liquidity levels to validate the effectiveness of dynamic risk thresholds.",
+      "Evaluate the system's ability to maintain reserve integrity under extreme market conditions with the new mitigation strategy."
+    ]
+  },
+  "proposal_hash": "0xe2aaddfe17586efff7dfe743523962612f6d069b049e8435b1611bf862125d45",
+  "source_match_id": "match_17ea180075ee4b0692d906c6d48246fe",
+  "status": "FROZEN"
+}

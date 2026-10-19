@@ -1,0 +1,23 @@
+{
+  "candidate_id": "candidate_fc05d2b5afae44e5a7cb310aecb2e989",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "This change would improve the effectiveness of the defense strategy by ensuring that the mitigations are not only identified but also implemented with clear, actionable steps that directly address the attack signals. This would increase the robustness of the system against similar adversarial attacks in the future.",
+    "problem": "The mitigations provided are somewhat generic and lack specific implementation details, which may reduce their effectiveness in preventing similar attacks in the future.",
+    "proposed_change": "The defense strategy should be updated to include more concrete and actionable mitigation steps that are explicitly tied to the attack signals. For example, instead of general statements like 'Enforce audit-before-execution,' the strategy should specify how audits are conducted, what thresholds are monitored, and how compliance gates are enforced in real-time. This would ensure that the mitigations are not only reactive but also proactive in addressing the specific risks outlined in the attack scenario.",
+    "risks": [],
+    "target_component": "mitigation_specificity",
+    "title": "Enhance Mitigation Specificity",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Check if the mitigations are tied to specific attack signals and include actionable steps.",
+      "Verify that the mitigations are not generic and provide clear implementation details."
+    ]
+  },
+  "proposal_hash": "0x2894fd1a40a7b4157d758afac452dc832c3a9df8cca715e063786bb5ddb72217",
+  "source_match_id": "match_cbbe1b2980a543c0a882a578b1184cad",
+  "status": "FROZEN"
+}

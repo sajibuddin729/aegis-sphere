@@ -1,0 +1,9 @@
+{
+  "candidate_hash": "0x75b74c5718b12d8d5ae460ce682c4deae7f8a653804bd54c8418e0feeeb54bd9",
+  "candidate_id": "candidate_ai_d67d577349424f2e",
+  "governance_block": 83,
+  "governance_decision": "APPROVED",
+  "governance_tx_hash": "0xe4945af241733d0a3731135737bc126c88f9bf38abb7cf694f269145a6025242",
+  "production_deployment_authorized": false,
+  "staging_authorized": true
+}

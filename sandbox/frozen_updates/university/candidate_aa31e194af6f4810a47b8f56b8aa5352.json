@@ -1,0 +1,23 @@
+{
+  "candidate_id": "candidate_aa31e194af6f4810a47b8f56b8aa5352",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 1.0,
+    "expected_benefit": "Preserving the successful behavior ensures that the system continues to effectively detect and block attacks that exploit missing pre-execution compliance anchors, maintaining the integrity of the audit and compliance enforcement mechanisms.",
+    "problem": "The defense correctly identifies the audit_anchor_failure and pre_execution_requirement signals and blocks the attack.",
+    "proposed_change": "The successful behavior of identifying the audit_anchor_failure and pre_execution_requirement signals and blocking the attack should be preserved. The strategy should maintain the multi-layer mitigation approach, including audit-before-execution, compliance gates, and replay protection, to ensure robust defense against similar attacks.",
+    "risks": [],
+    "target_component": "BLUE_TEAM",
+    "title": "Preservation of Successful Behavior",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Verify that the audit_anchor_failure and pre_execution_requirement signals are consistently identified and blocked.",
+      "Ensure that the multi-layer mitigation approach remains intact and effective against similar attack vectors."
+    ]
+  },
+  "proposal_hash": "0xb22e440b1e8daa176480a8d209b784349cfb54333251d1b9ef1ec34cec77fc64",
+  "source_match_id": "match_f6bf7071520d4158a80f0d9c929aeca3",
+  "status": "FROZEN"
+}

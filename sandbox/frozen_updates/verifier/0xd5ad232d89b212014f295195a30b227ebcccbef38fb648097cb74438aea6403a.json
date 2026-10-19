@@ -1,0 +1,9 @@
+{
+  "candidate_hash": "0xd5ad232d89b212014f295195a30b227ebcccbef38fb648097cb74438aea6403a",
+  "candidate_id": "candidate_verifier_malicious_fixture_v1",
+  "governance_block": 76,
+  "governance_decision": "REJECTED",
+  "governance_tx_hash": "0xbd65a841eb0a1cd78754fd0d44d809f3bce3e797cf01160ab59fb1c211c2f655",
+  "production_deployment_authorized": false,
+  "staging_authorized": false
+}

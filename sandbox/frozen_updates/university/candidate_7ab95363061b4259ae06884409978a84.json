@@ -1,0 +1,24 @@
+{
+  "candidate_id": "candidate_7ab95363061b4259ae06884409978a84",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 1.0,
+    "expected_benefit": "This will strengthen the defense by ensuring that even if an adversary finds a way to bypass one mechanism, they cannot bypass the entire audit and compliance framework, thereby reducing the risk of unauthorized transactions.",
+    "problem": "The defense does not explicitly address the possibility of bypassing audit mechanisms or the potential for replay attacks through alternative channels.",
+    "proposed_change": "Update the strategy to ensure that all audit and compliance controls are non-negotiable and that replay protection is enforced across all transaction types, not just those involving POI.",
+    "risks": [],
+    "target_component": "audit_and_compliance_enforcement",
+    "title": "Ensure Non-Negotiable Audit and Compliance Controls",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Test audit-before-execution across all transaction types",
+      "Validate replay protection mechanisms for non-POI transactions",
+      "Verify that compliance gates cannot be overridden under any circumstances"
+    ]
+  },
+  "proposal_hash": "0x2313d3b3e9b8a73a80665db273856ba6634d17776b7c964ac48760654b4b70c0",
+  "source_match_id": "match_3858b114a54b41e493c2e84710469ede",
+  "status": "FROZEN"
+}

@@ -1,0 +1,23 @@
+{
+  "candidate_id": "candidate_80fad4ea9572406689abe75574a80b28",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.85,
+    "expected_benefit": "This will improve the system's ability to detect and prevent indirect attacks, thereby strengthening the overall security posture in complex and evolving threat environments.",
+    "problem": "The current strategy does not sufficiently address the possibility of indirect attacks, despite the scenario's high indirectness level.",
+    "proposed_change": "Implement a strategy to proactively evaluate and mitigate potential indirect attack vectors, even in scenarios labeled as benign. This includes enhancing credential isolation mechanisms and ensuring that all control scenarios are audited for indirect threat exposure.",
+    "risks": [],
+    "target_component": "BLUE_TEAM",
+    "title": "Enhance Handling of Indirect Threats in Control Scenarios",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Evaluate the system's response to scenarios with indirect attack vectors.",
+      "Assess the effectiveness of enhanced credential isolation mechanisms in preventing indirect threats."
+    ]
+  },
+  "proposal_hash": "0x595754316e64640fa52f0af073877a9a7f90ae03297a1a9fe65e2111b11e58aa",
+  "source_match_id": "match_fdbe9196177d4596bdadb0691378b4fe",
+  "status": "FROZEN"
+}

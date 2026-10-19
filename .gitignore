@@ -28,10 +28,12 @@ target/
 .idea/
 .vscode/
 
-# Logs and evidence
+# Logs, documentation, scripts, and evidence
 *.log
 logs/
-docs/evidence/
+docs/
+scripts/
+*.docx
 evidence/
 
 # Database/runtime
@@ -47,6 +49,7 @@ blockchain/accounts/
 blockchain/get_account.sh
 apps/fisco-bridge/runtime/
 apps/api/runtime/
+apps/guard/runtime/
 ._*
 **/nodes/
 **/data/
@@ -70,3 +73,34 @@ models/
 coverage/
 htmlcov/
 .coverage
+
+# Regulatory RAG runtime secrets/models
+apps/rag/runtime/
+# HuggingFace/model cache
+models/
+.huggingface/
+
+# Agentic University runtime
+sandbox/shared_memory/runtime/
+sandbox/university/runtime/
+
+# University generated arena evaluation runtime
+sandbox/evaluations/arena/runtime/
+
+# Independent verifier runtime
+sandbox/verification/runtime/
+sandbox/verification/workspaces/
+
+# Independent blockchain verifier identity
+oracle/verifier/runtime/
+
+# Emergency oracle runtime
+oracle/monitor/runtime/
+oracle/monitor/evidence/runtime/
+
+# ZK generated / secret runtime
+zk/runtime/
+zk/build/
+zk/**/*.ptau
+zk/**/*.zkey
+zk/**/*.wtns

@@ -1,0 +1,124 @@
+{
+  "attestation": {
+    "attestation_nonce": "0x65fbd39c39e3b2fc781e74f7e06109b8d6ca98fb603a111ae4beb6fbc3264790",
+    "candidate_hash": "0x10dd6ef95ce05ef0b644595e150560637ad1028870adf148cf98bc218b857f1d",
+    "candidate_id": "candidate_outage_fixture_v1",
+    "decision": "VERIFIED",
+    "report_hash": "0xe7fc924d95b7e441ab08aa7f99630410e3171d05dcce799f084bdd602b3697e1",
+    "schema_version": "aegis-verifier-attestation-v1",
+    "timestamp": 1792143069,
+    "verification_id": "verification_33a35cbbbf07413990d283f94dcbd578",
+    "verifier_version": "aegis-independent-verifier-v1"
+  },
+  "attestation_hash": "0x0f1092145f96d02f34ced861e68beb2b1878d93595c52895e303d0cf6b4f2841",
+  "bundle_hash": "0x4daae127f31e32fe6e0b9ba4f815ecbb390e526e3b64d8a545311accce39df9d",
+  "candidate_hash": "0x10dd6ef95ce05ef0b644595e150560637ad1028870adf148cf98bc218b857f1d",
+  "candidate_id": "candidate_outage_fixture_v1",
+  "candidate_source_status": "PROPOSED",
+  "final_decision": "VERIFIED",
+  "report": {
+    "candidate_hash": "0x10dd6ef95ce05ef0b644595e150560637ad1028870adf148cf98bc218b857f1d",
+    "candidate_id": "candidate_outage_fixture_v1",
+    "checks": [
+      {
+        "details": {
+          "update_type": "PROMPT"
+        },
+        "evidence_hash": "0xead8013cb23a33e14f2f34f23ca8f057c8871825a98d395d8ad0af2f08bb5775",
+        "name": "schema",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "findings": []
+        },
+        "evidence_hash": "0x1595bf1a07bd8771bdba09bc0169d26e968ae15bc520ea112d62b70d6c4e32bc",
+        "name": "secret_scan",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "findings": []
+        },
+        "evidence_hash": "0x4cc516edaeab95e890243b04ec855e2c53454fa0f12523b8c3008f98d610a83d",
+        "name": "capability",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "findings": []
+        },
+        "evidence_hash": "0x6a4767ad389618e6f1a4a237515698645a73a10f1a4e62813918962b492235b2",
+        "name": "network",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "findings": []
+        },
+        "evidence_hash": "0xe906e0baad5157ca201d4c802a0a7049e287b17b7d203689e86efdd531eecaee",
+        "name": "ast",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "data_only": true
+        },
+        "evidence_hash": "0xf170f262ee521918eef22f2084c96a2f02de47b9efb3e8bb4e1eea09363c87b3",
+        "name": "imports",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "private_key_access": false
+        },
+        "evidence_hash": "0x6c7dc212933af968382145070f1b7ca6ab39435b8e0a63896c1f6a2b9d73a136",
+        "name": "signer_boundary",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {},
+        "evidence_hash": "0xfebf6c8aa831c48cd853e1dc6df69369c2c0e4148797a492a2308d820548cc78",
+        "name": "static_security",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "findings": []
+        },
+        "evidence_hash": "0x7a20e0b982f9bd53b96af6efb561830cde160bc81d3b03cf21097c9c2a752d61",
+        "name": "behavior",
+        "passed": true,
+        "severity": "INFO"
+      },
+      {
+        "details": {
+          "output_tail": ".....................................................                    [100%]\n53 passed in 0.12s\n",
+          "passed": true,
+          "returncode": 0
+        },
+        "evidence_hash": "0x3635d82b8e865c6da67ec56d87855a82e643b79afbcd339343f007fa021e4560",
+        "name": "regression",
+        "passed": true,
+        "severity": "INFO"
+      }
+    ],
+    "final_decision": "VERIFIED",
+    "rejection_reasons": [],
+    "schema_version": "aegis-verification-report-v1",
+    "verification_id": "verification_33a35cbbbf07413990d283f94dcbd578",
+    "verification_score": 100.0,
+    "verifier_version": "aegis-independent-verifier-v1"
+  },
+  "report_hash": "0xe7fc924d95b7e441ab08aa7f99630410e3171d05dcce799f084bdd602b3697e1",
+  "verification_id": "verification_33a35cbbbf07413990d283f94dcbd578",
+  "verifier_version_hash": "0x595e6b6796b34cbe2e2bfc5cba03c77357e5c8781f5d124f34706e1c9760a338"
+}

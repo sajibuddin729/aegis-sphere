@@ -1,0 +1,23 @@
+{
+  "candidate_id": "candidate_b6cf8811fcc047fd999df56c19c26921",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "This change ensures that audit requirements take precedence over compliance decisions, aligning the system with its own audit and compliance requirements and preventing potential control gaps.",
+    "problem": "The audit anchor status being failed should have already triggered a BLOCK decision, indicating a potential misalignment between audit and compliance requirements.",
+    "proposed_change": "Implement a strict audit-first policy where audit status is checked before any compliance decision is made. If the audit anchor status is failed, the system must automatically enforce a BLOCK decision without requiring clarification or override.",
+    "risks": [],
+    "target_component": "audit_and_compliance",
+    "title": "Ensure Audit Status Precedence in Compliance Decisions",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Verify that a failed audit anchor status triggers an automatic BLOCK decision without requiring clarification.",
+      "Test the system's response to audit status changes under compliance decision scenarios."
+    ]
+  },
+  "proposal_hash": "0x1ff0e7e14ba4b7073c15a0e78835c8db2ced0f0aa5e954884733b984ee266fd0",
+  "source_match_id": "match_1d56bb02178947b49d8605c82f114030",
+  "status": "FROZEN"
+}

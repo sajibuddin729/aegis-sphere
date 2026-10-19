@@ -1,4 +1,23 @@
-from pydantic import BaseModel, ConfigDict
+from typing import Annotated, Literal
+from pydantic import (
+    BaseModel,
+    ConfigDict,
+    StringConstraints,
+)
+
+Hex32 = Annotated[
+    str,
+    StringConstraints(
+        pattern=r"^0x[0-9a-fA-F]{64}$"
+    ),
+]
+
+Address = Annotated[
+    str,
+    StringConstraints(
+        pattern=r"^0x[0-9a-fA-F]{40}$"
+    ),
+]
 
 
 class AegisPoI(BaseModel):
@@ -7,29 +26,21 @@ class AegisPoI(BaseModel):
         extra="forbid",
     )
 
-    schema_version: str
-
-    intent_id: str
-
-    leader_agent_id: str
-    model_version: str
-
+    intentId: Hex32
+    userRequestHash: Hex32
+    leaderAgentId: str
+    modelVersion: str
     action: str
     asset: str
-    amount_minor: int
-    recipient: str
-
-    risk_score_bps: int
-    risk_class: str
-
-    policy_version: str
-    policy_hash: str
-
-    purpose: str
-
+    amount: int
+    recipient: Address
+    riskScore: int
+    riskClass: str
+    policyVersion: str
+    policyHash: Hex32
+    evidenceHash: Hex32
+    explanationHash: Hex32
+    timestamp: int
+    expiry: int
+    nonce: Hex32
     decision: str
-
-    timestamp_utc: str
-    expiry_utc: str
-
-    nonce: str

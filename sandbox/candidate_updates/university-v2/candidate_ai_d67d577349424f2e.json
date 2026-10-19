@@ -1,0 +1,55 @@
+{
+  "candidate_hash": "0x75b74c5718b12d8d5ae460ce682c4deae7f8a653804bd54c8418e0feeeb54bd9",
+  "candidate_id": "candidate_ai_d67d577349424f2e",
+  "deployment_authorized": false,
+  "frozen_reason": null,
+  "generated_by": "AEGIS_EVOLUTION_AGENT",
+  "policy_result": "PROPOSED",
+  "proposal": {
+    "confidence": 0.95,
+    "deployment_authorized": false,
+    "expected_benefit": "This change will prevent intent replay attacks by ensuring that intentIds are globally unique and cannot be reused, even with different PoI hashes.",
+    "problem": "The system currently rejects duplicate PoI hashes but does not enforce on-chain rejection of reused intentIds with different PoI hashes, creating a potential vulnerability for intent replay attacks.",
+    "proposed_change": "Implement a policy that enforces the uniqueness of intentIds across all on-chain transactions, regardless of the PoI hash. This includes checking that an intentId has not been previously used in any transaction, even if the PoI hash differs.",
+    "risks": [
+      {
+        "description": "Introducing this policy may increase the computational overhead of intent validation, potentially affecting system performance.",
+        "mitigation": "Optimize the intentId lookup mechanism using a hash map or trie structure to ensure efficient validation.",
+        "risk_id": "RISK-001",
+        "severity": "MEDIUM"
+      },
+      {
+        "description": "If the policy is incorrectly implemented, it may lead to false rejections of valid intents, causing operational disruptions.",
+        "mitigation": "Implement thorough unit and integration testing to ensure the policy behaves as intended.",
+        "risk_id": "RISK-002",
+        "severity": "HIGH"
+      }
+    ],
+    "rollback_plan": "If the policy causes performance degradation or false rejections, revert to the previous behavior and investigate alternative optimizations for intentId validation.",
+    "schema_version": "aegis-candidate-v2",
+    "security_invariants": [
+      "INV-01: IntentIds must be globally unique across all on-chain transactions.",
+      "INV-02: Intent validation must reject any intent with a previously used intentId, regardless of PoI hash.",
+      "INV-03: The system must ensure that intentIds are not reused in any form of replay attack."
+    ],
+    "target_component": "intent validation",
+    "title": "IntentId Reuse Prevention Policy",
+    "update_type": "POLICY",
+    "verification_tests": [
+      {
+        "description": "Test that an intent with a reused intentId (different PoI hash) is rejected on-chain.",
+        "expected_result": "The intent is rejected with an error indicating intentId reuse.",
+        "test_id": "TEST-001"
+      },
+      {
+        "description": "Test that an intent with a new intentId (same PoI hash) is accepted.",
+        "expected_result": "The intent is accepted and processed normally.",
+        "test_id": "TEST-002"
+      }
+    ]
+  },
+  "proposal_hash": "0x32728c0d95051e2beeacd8b63ce48c34e4cadb453bca4446c6049480e222e6e5",
+  "source_finding_id": "FINDING-INTENT-REPLAY-001",
+  "source_status": "PROPOSED",
+  "status": "PROPOSED"
+}

@@ -1,0 +1,24 @@
+{
+  "candidate_id": "candidate_a11d02425a484fafa71349207c1bce86",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "This change would explicitly address the scenario where AI-generated content bypasses self-authorization by exploiting the absence of independent verification, thereby strengthening the defense against such attacks.",
+    "problem": "The defense assumes that audit-before-execution and compliance gates will fully prevent AI-generated content from bypassing self-authorization, but it does not explicitly address how AI-generated content is detected or mitigated in the absence of independent verification.",
+    "proposed_change": "Implement a dedicated AI-generated content detection mechanism as part of the self-authorization process. This mechanism should be integrated with the existing audit and compliance gates to ensure that AI-generated updates are identified and blocked, even in the absence of independent verification.",
+    "risks": [],
+    "target_component": "DEFENSE_LOGIC",
+    "title": "Enhance Detection of AI-Generated Content in Self-Authorization",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Test AI-generated content detection during self-authorization",
+      "Validate that AI-generated updates are blocked without independent verification",
+      "Ensure detection mechanism does not interfere with legitimate updates"
+    ]
+  },
+  "proposal_hash": "0x540a1352652dede20468f00fb7c5ce4ff417a0169cea9f8ad29335db564e152c",
+  "source_match_id": "match_eee31338453d4e59bd0ff0f1667886e7",
+  "status": "FROZEN"
+}

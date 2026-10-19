@@ -23,10 +23,12 @@ public final class BridgeServer {
     private final BridgeConfig config;
     private final FiscoContext fisco;
     private final HttpServer server;
+    private final PersistentIntentReplayGuard replayGuard;
 
     private BridgeServer(BridgeConfig config, FiscoContext fisco) throws Exception {
         this.config = config;
         this.fisco = fisco;
+        this.replayGuard = new PersistentIntentReplayGuard(java.nio.file.Path.of(config.intentLedgerPath));
         this.server = HttpServer.create(
             new InetSocketAddress(config.host, config.port), 0
         );
@@ -57,6 +59,9 @@ public final class BridgeServer {
         server.createContext("/risk/spent", this::riskSpent);
         server.createContext("/poi/", this::poiExists);
         server.createContext("/transaction/", this::transactionReceipt);
+        server.createContext("/portfolio/state", this::portfolioState);
+        server.createContext("/portfolio/rebalance", this::portfolioRebalance);
+        server.createContext("/audit/evidence", this::auditEvidence);
     }
 
     private void health(HttpExchange exchange) throws IOException {
@@ -213,6 +218,13 @@ public final class BridgeServer {
                 throw new IllegalArgumentException("riskScoreBps must be between 0 and 10000");
             }
 
+            long expiry = body.has("expiry") ? body.get("expiry").asLong() : 0L;
+            if (expiry > 0 && java.time.Instant.now().getEpochSecond() > expiry) {
+                throw new IllegalStateException("AEGIS: POI_EXPIRED");
+            }
+
+            replayGuard.checkBeforeExecution(intentId);
+
             TransactionReceipt receipt = fisco.transfer(
                 recipient, amount, poiHash, intentId, policyHash, risk
             );
@@ -224,9 +236,24 @@ public final class BridgeServer {
                 send(exchange, 422, result);
                 return;
             }
+
+            replayGuard.recordConsumed(intentId);
             send(exchange, 200, result);
         } catch (IllegalArgumentException e) {
             error(exchange, 400, "INVALID_REQUEST", e);
+        } catch (RuntimeException e) {
+            String msg = e.getMessage() == null ? "" : e.getMessage();
+            if (msg.contains("EMERGENCY_STOP_ACTIVE")) {
+                error(exchange, 503, "EMERGENCY_STOP_ACTIVE", e);
+            } else if (msg.contains("EMERGENCY_ORACLE_UNAVAILABLE")) {
+                error(exchange, 503, "EMERGENCY_ORACLE_UNAVAILABLE", e);
+            } else if (msg.contains("AEGIS: POI_EXPIRED")) {
+                error(exchange, 422, "AEGIS: POI_EXPIRED", e);
+            } else if (msg.contains("AEGIS: INTENT_ALREADY_EXECUTED")) {
+                error(exchange, 422, "AEGIS: INTENT_ALREADY_EXECUTED", e);
+            } else {
+                error(exchange, 422, "TRANSACTION_REJECTED", e);
+            }
         } catch (Exception e) {
             error(exchange, 422, "TRANSACTION_REJECTED", e);
         }
@@ -258,6 +285,111 @@ public final class BridgeServer {
         }
     }
 
+    private void portfolioState(HttpExchange exchange) throws IOException {
+        if (!method(exchange, "GET")) {
+            return;
+        }
+
+        if (!authorized(exchange)) {
+            return;
+        }
+
+        try {
+            send(exchange, 200, fisco.portfolioState());
+        } catch (Exception e) {
+            error(exchange, 500, "PORTFOLIO_STATE_FAILED", e);
+        }
+    }
+
+    private void portfolioRebalance(HttpExchange exchange) throws IOException {
+        if (!method(exchange, "POST")) {
+            return;
+        }
+
+        if (!authorized(exchange)) {
+            return;
+        }
+
+        try {
+            JsonNode body = JSON.readTree(exchange.getRequestBody());
+
+            String direction = text(body, "direction");
+            String amountRaw = text(body, "amountInMinor");
+            String minOutRaw = text(body, "minAmountOutMinor");
+            String poiHash = text(body, "poiHash");
+            String intentId = text(body, "intentId");
+            String policyHash = text(body, "policyHash");
+            String riskRaw = text(body, "riskScoreBps");
+
+            if (!direction.equals("ACNY_TO_AGIX") && !direction.equals("AGIX_TO_ACNY")) {
+                throw new IllegalArgumentException("Invalid portfolio direction");
+            }
+
+            if (!HexUtil.isBytes32(poiHash)
+                || !HexUtil.isBytes32(intentId)
+                || !HexUtil.isBytes32(policyHash)) {
+                throw new IllegalArgumentException("Invalid bytes32 input");
+            }
+
+            BigInteger amountIn = new BigInteger(amountRaw);
+            BigInteger minOut = new BigInteger(minOutRaw);
+            BigInteger risk = new BigInteger(riskRaw);
+
+            if (risk.compareTo(BigInteger.ZERO) < 0
+                || risk.compareTo(BigInteger.valueOf(10000)) > 0) {
+                throw new IllegalArgumentException("riskScoreBps out of range");
+            }
+
+            long expiry = body.has("expiry") ? body.get("expiry").asLong() : 0L;
+            if (expiry > 0 && java.time.Instant.now().getEpochSecond() > expiry) {
+                throw new IllegalStateException("AEGIS: POI_EXPIRED");
+            }
+
+            replayGuard.checkBeforeExecution(intentId);
+
+            TransactionReceipt receipt = fisco.rebalancePortfolio(
+                direction,
+                amountIn,
+                minOut,
+                poiHash,
+                intentId,
+                policyHash,
+                risk
+            );
+
+            Map<String, Object> result = receiptJson(receipt);
+            result.put("success", receipt.isStatusOK());
+            result.put("direction", direction);
+            result.put("poiHash", poiHash);
+
+            if (!receipt.isStatusOK()) {
+                send(exchange, 422, result);
+                return;
+            }
+
+            replayGuard.recordConsumed(intentId);
+            send(exchange, 200, result);
+
+        } catch (IllegalArgumentException e) {
+            error(exchange, 400, "INVALID_PORTFOLIO_REQUEST", e);
+        } catch (RuntimeException e) {
+            String msg = e.getMessage() == null ? "" : e.getMessage();
+            if (msg.contains("EMERGENCY_STOP_ACTIVE")) {
+                error(exchange, 503, "EMERGENCY_STOP_ACTIVE", e);
+            } else if (msg.contains("EMERGENCY_ORACLE_UNAVAILABLE")) {
+                error(exchange, 503, "EMERGENCY_ORACLE_UNAVAILABLE", e);
+            } else if (msg.contains("AEGIS: POI_EXPIRED")) {
+                error(exchange, 422, "AEGIS: POI_EXPIRED", e);
+            } else if (msg.contains("AEGIS: INTENT_ALREADY_EXECUTED")) {
+                error(exchange, 422, "AEGIS: INTENT_ALREADY_EXECUTED", e);
+            } else {
+                error(exchange, 422, "PORTFOLIO_REBALANCE_REJECTED", e);
+            }
+        } catch (Exception e) {
+            error(exchange, 422, "PORTFOLIO_REBALANCE_REJECTED", e);
+        }
+    }
+
     private boolean authorized(HttpExchange exchange) throws IOException {
         String provided = exchange.getRequestHeaders().getFirst("X-Aegis-Bridge-Key");
         if (provided == null || !constantTimeEquals(provided, config.bridgeKey)) {
@@ -278,6 +410,103 @@ public final class BridgeServer {
             diff |= x[i] ^ y[i];
         }
         return diff == 0;
+    }
+
+    private void auditEvidence(HttpExchange exchange) throws IOException {
+        if (!authorized(exchange)) {
+            return;
+        }
+
+        String method = exchange.getRequestMethod().toUpperCase();
+        String path = exchange.getRequestURI().getPath();
+
+        try {
+            if (method.equals("POST") && path.equals("/audit/evidence")) {
+                JsonNode body = JSON.readTree(exchange.getRequestBody());
+
+                String evidenceHash = text(body, "evidenceHash");
+                String policyVersionHash = text(body, "policyVersionHash");
+                String retrievalSetHash = text(body, "retrievalSetHash");
+                String decisionHash = text(body, "decisionHash");
+                String relatedPoIHash = text(body, "relatedPoIHash");
+
+                String[] hashes = {
+                    evidenceHash,
+                    policyVersionHash,
+                    retrievalSetHash,
+                    decisionHash,
+                    relatedPoIHash
+                };
+
+                for (String hash : hashes) {
+                    if (!HexUtil.isBytes32(hash)) {
+                        throw new IllegalArgumentException(
+                            "All audit hashes must be bytes32"
+                        );
+                    }
+                }
+
+                TransactionReceipt receipt = fisco.recordAuditEvidence(
+                    evidenceHash,
+                    policyVersionHash,
+                    retrievalSetHash,
+                    decisionHash,
+                    relatedPoIHash
+                );
+
+                Map<String, Object> result = receiptJson(receipt);
+                result.put("success", receipt.isStatusOK());
+                result.put("evidenceHash", evidenceHash);
+                result.put("relatedPoIHash", relatedPoIHash);
+
+                if (!receipt.isStatusOK()) {
+                    send(exchange, 422, result);
+                    return;
+                }
+
+                send(exchange, 200, result);
+                return;
+            }
+
+            if (method.equals("GET") && path.startsWith("/audit/evidence/")) {
+                String evidenceHash = path.substring("/audit/evidence/".length());
+
+                if (!HexUtil.isBytes32(evidenceHash)) {
+                    send(
+                        exchange,
+                        400,
+                        Map.of("error", "INVALID_EVIDENCE_HASH")
+                    );
+                    return;
+                }
+
+                send(
+                    exchange,
+                    200,
+                    fisco.getAuditEvidence(evidenceHash)
+                );
+                return;
+            }
+
+            send(
+                exchange,
+                405,
+                Map.of("error", "METHOD_NOT_ALLOWED")
+            );
+
+        } catch (IllegalArgumentException e) {
+            error(exchange, 400, "INVALID_AUDIT_REQUEST", e);
+        } catch (IllegalStateException e) {
+            if (e.getMessage() != null && e.getMessage().contains("EMERGENCY_STOP_ACTIVE")) {
+                error(exchange, 503, "EMERGENCY_STOP_ACTIVE", e);
+            } else if (e.getMessage() != null && e.getMessage().contains("EMERGENCY_ORACLE_UNAVAILABLE")) {
+                error(exchange, 503, "EMERGENCY_ORACLE_UNAVAILABLE", e);
+            } else {
+                error(exchange, 422, "AUDIT_EVIDENCE_REJECTED", e);
+            }
+        } catch (Exception e) {
+            error(exchange, 422, "AUDIT_EVIDENCE_REJECTED", e);
+        }
     }
 
     private static boolean method(HttpExchange exchange, String expected) throws IOException {

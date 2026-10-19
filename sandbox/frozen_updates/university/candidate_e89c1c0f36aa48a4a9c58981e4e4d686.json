@@ -1,0 +1,23 @@
+{
+  "candidate_id": "candidate_e89c1c0f36aa48a4a9c58981e4e4d686",
+  "deployment_authorized": false,
+  "frozen_reason": "NO_RISK_ASSESSMENT",
+  "policy_result": "FROZEN",
+  "proposal": {
+    "confidence": 0.95,
+    "expected_benefit": "Maintains the correct defensive decision while addressing the inconsistency in signal detection, ensuring robust and accurate decision-making in future scenarios.",
+    "problem": "The scenario indicates that 'poi_exists' is false, but the defense detected 'fresh_poi', which may lead to incorrect assumptions about the transaction's legitimacy.",
+    "proposed_change": "Preserve the successful behavior of correctly identifying 'fresh_poi' and 'unique_intent' signals while ensuring that the detection of 'fresh_poi' is cross-validated against the scenario's constraint that 'poi_exists' is false. This will prevent incorrect assumptions about the transaction's legitimacy and ensure alignment with the expected decision.",
+    "risks": [],
+    "target_component": "BLUE_TEAM",
+    "title": "Preservation of Successful Behavior",
+    "update_type": "STRATEGY",
+    "verification_tests": [
+      "Validate that 'fresh_poi' detection is cross-validated against 'poi_exists' constraint.",
+      "Ensure that the decision-making process aligns with the scenario's expected decision."
+    ]
+  },
+  "proposal_hash": "0x3c951fc1d6c88733ae9a06c21f38024a8536d29a9ec2885481b8a97e3bfa8bf6",
+  "source_match_id": "match_6eac983da82d4ed5a0383ac367ae8a57",
+  "status": "FROZEN"
+}

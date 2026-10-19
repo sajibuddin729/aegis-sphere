@@ -1,0 +1,23 @@
+{
+  "candidate_hash": "0x2f663b51595ae1c5cd4b4a9454d414742b1494f54479f0dcbac4dff2c732d5a8",
+  "candidate_id": "candidate_84052715001042448427bf7245fc3d67",
+  "checks": [
+    {
+      "details": {
+        "error": "RISK_ASSESSMENT_REQUIRED"
+      },
+      "evidence_hash": "0x035622b534c2a85be59a295d221e80339e06a53efbb8238621dd613ac10bd79b",
+      "name": "schema",
+      "passed": false,
+      "severity": "CRITICAL"
+    }
+  ],
+  "final_decision": "REJECTED",
+  "rejection_reasons": [
+    "schema:CRITICAL"
+  ],
+  "schema_version": "aegis-verification-report-v1",
+  "verification_id": "verification_dca31ca3ce47416eb99e61322ad0c6e4",
+  "verification_score": 0.0,
+  "verifier_version": "aegis-independent-verifier-v1"
+}

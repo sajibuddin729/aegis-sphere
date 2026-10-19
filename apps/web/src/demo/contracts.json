@@ -1,0 +1,21 @@
+{
+  "network": "local-fisco-bcos",
+  "chainId": "chain0",
+  "groupId": "group0",
+  "fiscoVersion": "3.17.1",
+  "consensus": "PBFT (4 Validators, f=1)",
+  "contracts": [
+    { "name": "AegisToken (ACNY)", "address": "0xc8ead4b26b2c6ac14c9fd90d9684c9bc2cc40085", "type": "Asset Token Layer" },
+    { "name": "PoIRegistry", "address": "0xd24180cc0fef2f3e545de4f9aafc09345cd08903", "type": "Proof-of-Intent Ledger" },
+    { "name": "RiskCircuitBreaker", "address": "0x37a44585bf1e9618fdb4c62c4c96189a07dd4b48", "type": "On-Chain Risk Circuit" },
+    { "name": "AgentWallet", "address": "0x31ed5233b81c79d5adddeef991f531a9bbc2ad01", "type": "Autonomous Agent Vault" },
+    { "name": "AuditEvidenceRegistry", "address": "0xa2577385c5d9eb63b6bb230325e28c7294650f44", "type": "Pre-Execution Audit Anchor" },
+    { "name": "UpdateGovernance", "address": "0x40fce2f6cbef3daa8e671549102d386f75a058ba", "type": "Candidate Governance Ledger" },
+    { "name": "AegisEligibilityVerifier", "address": "0x0966598496a26e837bbd75b0dd877a3612e02962", "type": "Groth16 Pairing Verifier" },
+    { "name": "ZKEligibilityGate", "address": "0x717570d925f97a1bc4a852b61fe89b46a1294b2b", "type": "Private Snapshot Gate" },
+    { "name": "AegisGrowthIndex (AGIX)", "address": "0x610857669da60d63f4c9e30713bb86a49251fe2a", "type": "Synthetic Growth Asset" },
+    { "name": "SwapPool", "address": "0x70b93b07646fd256572d3c8efeef3c8de4a7e7a4", "type": "Portfolio AMM / Swap" },
+    { "name": "PortfolioRiskGuard", "address": "0x07f5bea3c7a17b8f1c1eab27eaf267373cacb049", "type": "Allocation Invariant Guard" },
+    { "name": "PortfolioManager", "address": "0x0519e7423be2a00eb57d9a7e6e98cd1e6f02cff4", "type": "Autonomous Rebalance Orchestrator" }
+  ]
+}
