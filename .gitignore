@@ -28,12 +28,9 @@ target/
 .idea/
 .vscode/
 
-# Logs, documentation, scripts, and evidence
+# Logs and temporary runtime evidence
 *.log
 logs/
-docs/
-scripts/
-*.docx
 evidence/
 
 # Database/runtime

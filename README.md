@@ -5,7 +5,16 @@ Aegis-Sphere is an autonomous financial wallet agent built on FISCO BCOS. It rea
 
 ---
 
+> 🚀 **Core Documentation & Quick Links:**
+> - 📖 **[Deployment & Service Orchestration Guide (docs/DEPLOYMENT.md)](docs/DEPLOYMENT.md)** — Complete multi-daemon runbook, network architecture, and port mappings.
+> - 🧪 **[Automated Test Suite Specification (test.md)](test.md)** — 102/102 automated tests, security invariants, and audit criteria.
+> - 📄 **[Download Word Test Specification (.docx)](Aegis_Sphere_Test_Cases_Specification.docx)** — Complete formatted test report for competition judges.
+
+---
+
 ## Table of Contents
+- 📖 **[Deployment Guide (docs/DEPLOYMENT.md)](docs/DEPLOYMENT.md)**
+- 🧪 **[Test Suite Specification (test.md)](test.md)**
 1. [Overview](#1-overview)
 2. [Competition Topic and Alignment](#2-competition-topic-and-alignment)
 3. [Core Problems and Solutions](#3-core-problems-and-solutions)
